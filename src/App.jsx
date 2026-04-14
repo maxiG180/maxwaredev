@@ -29,10 +29,10 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-[#cbd5e1] font-sans antialiased selection:bg-white selection:text-black">
       
-      {/* Absolute Minimal Background */}
-      <div 
-        className="fixed inset-0 z-[-1] opacity-[0.1] pointer-events-none"
-        style={{ 
+      {/* Background texture */}
+      <div
+        className="fixed inset-0 z-[-1] opacity-[0.25] pointer-events-none"
+        style={{
           backgroundImage: `url('/resources/Background.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
