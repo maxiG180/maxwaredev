@@ -8,7 +8,7 @@ const App = () => {
   const [isCvOpen, setIsCvOpen] = useState(false);
 
   useEffect(() => {
-    // Technical reveal animations
+    // Reveal animations
     gsap.utils.toArray(".reveal").forEach((el) => {
       gsap.fromTo(el, 
         { opacity: 0, y: 15 },
@@ -40,12 +40,12 @@ const App = () => {
       ></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-50 h-20 flex items-center border-b border-white/[0.03] bg-[#050505]/95 backdrop-blur-xl px-8 md:px-16 text-white text-left">
-        <div className="container mx-auto flex justify-between items-center">
+      <nav className="fixed top-0 left-0 w-full z-50 h-20 flex items-center border-b border-white/[0.08] bg-[#050505]/95 backdrop-blur-xl px-8 md:px-16 text-white">
+        <div className="container mx-auto flex justify-between items-center text-left">
           <a href="#" className="font-semibold tracking-[0.2em] text-sm uppercase">
             MaxWare
           </a>
-          <div className="flex items-center gap-12">
+          <div className="flex items-center gap-12 text-left">
             <ul className="hidden md:flex items-center gap-10 text-gray-400 font-normal">
               {['About', 'Education', 'Experience', 'Portfolio'].map(item => (
                 <li key={item}>
@@ -55,7 +55,7 @@ const App = () => {
                 </li>
               ))}
             </ul>
-            <button onClick={() => setIsCvOpen(true)} className="text-[11px] uppercase tracking-[0.3em] font-medium border border-white/20 px-5 py-2 rounded-lg hover:bg-white hover:text-black transition-all">
+            <button onClick={() => setIsCvOpen(true)} className="text-[11px] uppercase tracking-[0.3em] font-medium border border-white/40 px-6 py-2.5 rounded-lg hover:bg-white hover:text-black transition-all">
               Curriculum
             </button>
           </div>
@@ -66,7 +66,7 @@ const App = () => {
         
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col justify-center pt-32 pb-20 text-left">
-          <div className="grid lg:grid-cols-[1fr_auto] gap-24 items-center w-full reveal text-left">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-24 items-center w-full reveal">
             
             {/* Left Bio */}
             <div className="max-w-2xl py-10">
@@ -76,11 +76,11 @@ const App = () => {
               <h2 className="text-xl md:text-2xl text-gray-300 font-normal mb-10 tracking-widest uppercase">
                 Full Stack .NET & React Engineer • Eindhoven, NL
               </h2>
-              <p className="text-lg text-gray-400 max-w-xl mb-12 leading-relaxed font-light italic">
+              <p className="text-lg text-gray-400 max-w-xl mb-12 leading-relaxed font-light italic text-left">
                 "I architect software that automates real business operations. 7+ production platforms delivered."
               </p>
               <div className="flex items-center gap-10">
-                <a href="#projects" className="border border-white/10 text-white px-10 py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] font-medium hover:bg-white hover:text-black transition-all">
+                <a href="#projects" className="border border-white/40 text-white px-10 py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] font-medium hover:bg-white hover:text-black transition-all">
                   Portfolio
                 </a>
                 <div className="flex gap-6">
@@ -93,8 +93,7 @@ const App = () => {
 
             {/* Right Asset Dashboard */}
             <div className="hidden lg:flex flex-col gap-10">
-              {/* Profile Image - Large & Rounded */}
-              <div className="w-[350px] h-[350px] rounded-[3rem] overflow-hidden border border-white/[0.05] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 shadow-2xl">
+              <div className="w-[350px] h-[350px] rounded-[3rem] overflow-hidden border border-white/[0.1] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 shadow-2xl">
                 <img 
                   src="/resources/ProfilePic.jpeg" 
                   alt="Maksym Grebeniuk" 
@@ -102,17 +101,16 @@ const App = () => {
                 />
               </div>
               
-              {/* CV Access Card */}
               <div 
                 onClick={() => setIsCvOpen(true)}
-                className="w-[350px] p-8 bg-white/[0.01] border border-white/[0.05] rounded-[2rem] cursor-pointer group hover:bg-white/[0.03] hover:border-white/20 transition-all shadow-2xl"
+                className="w-[350px] p-8 bg-white/[0.02] border border-white/[0.1] rounded-[2rem] cursor-pointer group hover:bg-white/[0.05] hover:border-white/40 transition-all shadow-2xl"
               >
                 <div className="flex items-center justify-between mb-6 text-gray-400 font-normal">
                   <div className="text-[10px] uppercase tracking-[0.3em] italic">Full Dossier</div>
                   <i className="fas fa-expand text-xs group-hover:text-white transition-colors"></i>
                 </div>
-                <div className="flex items-center gap-6 text-left">
-                  <div className="w-14 h-18 bg-[#111] rounded-lg border border-white/10 shadow-xl shrink-0 group-hover:border-white/30 transition-colors relative overflow-hidden">
+                <div className="flex items-center gap-6">
+                  <div className="w-14 h-18 bg-[#111] rounded-lg border border-white/20 shadow-xl shrink-0 group-hover:border-white/40 transition-colors relative overflow-hidden">
                     <img src="/resources/CV_img.png" alt="CV Preview" className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all" />
                     <div className="absolute inset-0 bg-white/[0.02] group-hover:bg-transparent transition-colors"></div>
                   </div>
@@ -126,7 +124,7 @@ const App = () => {
           </div>
         </section>
 
-        {/* CV Modal */}
+        {/* Modal */}
         {isCvOpen && (
           <div className="fixed inset-0 z-[200] bg-[#000]/98 backdrop-blur-3xl flex items-center justify-center p-4 md:p-10 text-left">
             <button 
@@ -145,76 +143,65 @@ const App = () => {
           </div>
         )}
 
-        {/* About Section */}
-        <section id="about" className="py-40 border-t border-white/[0.03] text-left">
+        {/* Identity Section - Simplified Copy */}
+        <section id="about" className="py-40 border-t border-white/[0.08] text-left">
           <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal text-left">
-            <h3 className="text-[11px] uppercase tracking-[0.6em] text-white font-semibold italic">Identity</h3>
+            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic">Identity</h3>
             <div className="max-w-3xl space-y-10">
               <p className="text-2xl md:text-4xl text-white font-light leading-tight tracking-tight">
-                Bridging technical engineering with elite discipline.
+                Engineering software with a focus on real business impact.
               </p>
               <div className="space-y-8 text-lg text-gray-400 font-light leading-relaxed">
                 <p>
-                  Born in Ukraine and raised in Portugal, I relocated to the Eindhoven tech hub to pursue Software Engineering at <span className="text-white font-normal">Fontys University</span>. My career is defined by building software that automates real business operations, turning complex manual problems into scalable technical assets.
+                  Born in Ukraine and raised in Portugal, I relocated to the Eindhoven tech hub to study Software Engineering at <span className="text-white font-normal">Fontys University</span>. I focus on building systems that solve operational problems through automation and modern technical architecture.
                 </p>
                 <p>
-                  Beyond engineering, my life has been shaped by years of high-level competition in professional sports. This background in elite athletics has built a foundation of <span className="text-white italic">discipline, resilience, and attention to detail</span> that I bring to every system I architect and every line of code I write.
-                </p>
-                <p>
-                  I thrive in the <span className="text-white font-normal">Delta Excellence Programme</span>, working at the edge of enterprise software architecture to deliver production-grade platforms.
+                  My character is built on years of high-level competition in professional sports. This background instilled a foundation of <span className="text-white italic text-left">discipline, resilience, and attention to detail</span> that I bring to every system I architect and every line of code I write.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Education Section */}
-        <section id="education" className="py-40 border-t border-white/[0.03] text-left">
+        {/* Academic Section */}
+        <section id="education" className="py-40 border-t border-white/[0.08] text-left">
           <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal text-left">
-            <h3 className="text-[11px] uppercase tracking-[0.6em] text-white font-semibold italic text-left">Education</h3>
+            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic text-left">Education</h3>
             <div className="max-w-3xl space-y-24">
               
               <div className="space-y-12">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-10 border-b border-white/[0.03] pb-12 text-white">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-10 border-b border-white/[0.08] pb-12 text-white text-left">
                   <div className="flex items-center gap-10 text-left">
-                    <div className="w-24 h-24 shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110 p-2 bg-white/[0.02] rounded-2xl border border-white/[0.05]">
+                    <div className="w-24 h-24 shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110 p-2 bg-white/[0.02] rounded-2xl border border-white/[0.1]">
                       <img src="/resources/fontyslogo.png" alt="Fontys" className="max-w-full max-h-full object-contain" />
                     </div>
                     <div>
                       <h4 className="text-2xl font-medium uppercase tracking-widest leading-none mb-3 text-left">Fontys University</h4>
-                      <p className="text-sm text-gray-400 font-normal uppercase tracking-widest leading-relaxed italic">BSc Software Engineering</p>
+                      <p className="text-sm text-gray-400 font-normal uppercase tracking-widest leading-relaxed italic text-left text-left">BSc Software Engineering • Delta Excellence Programme</p>
                     </div>
                   </div>
                   <span className="text-lg font-medium text-white uppercase tracking-widest shrink-0 italic whitespace-nowrap">2024 - 2028</span>
                 </div>
-                <div className="space-y-6">
-                  <div className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 text-white text-[10px] font-bold uppercase tracking-widest rounded-lg italic">
-                    Delta Excellence Programme Member
-                  </div>
-                  <p className="text-gray-400 font-light leading-relaxed max-w-2xl text-xl">
-                    Selected for the elite programme representing the top tier of engineering students. Focusing on advanced software architecture and professional leadership.
-                  </p>
-                </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-16 pt-8 text-left">
-                <div className="p-10 bg-white/[0.01] border border-white/[0.03] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
-                  <div className="flex items-center gap-6 mb-8 text-left">
-                    <div className="w-20 h-20 flex items-center justify-center bg-white/[0.02] rounded-2xl p-2 transition-transform group-hover:scale-105">
+              <div className="grid md:grid-cols-2 gap-16 pt-8 text-left text-left">
+                <div className="p-10 bg-white/[0.01] border border-white/[0.08] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
+                  <div className="flex items-center gap-6 mb-8 text-left text-left">
+                    <div className="w-20 h-20 flex items-center justify-center bg-white/[0.02] rounded-2xl p-2 transition-transform group-hover:scale-105 border border-white/[0.1]">
                       <img src="/resources/inetelogo.png" alt="INETE" className="max-w-full max-h-full object-contain" />
                     </div>
-                    <h5 className="text-[11px] text-white uppercase font-bold tracking-widest">INETE Lisbon</h5>
+                    <h5 className="text-[11px] text-white uppercase font-bold tracking-widest text-left">INETE Lisbon</h5>
                   </div>
-                  <p className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-normal leading-loose">
+                  <p className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-normal leading-loose text-left">
                     IT & Software Development <br/> Professional track <br/> 2020 — 2023
                   </p>
                 </div>
-                <div className="p-10 bg-white/[0.01] border border-white/[0.03] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
-                  <div className="flex items-center gap-6 mb-8 text-left">
-                    <div className="w-28 h-28 flex items-center justify-center bg-white/[0.02] rounded-2xl p-2 transition-transform group-hover:scale-105">
+                <div className="p-10 bg-white/[0.01] border border-white/[0.08] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
+                  <div className="flex items-center gap-6 mb-8 text-left text-left">
+                    <div className="w-28 h-28 flex items-center justify-center bg-white/[0.02] rounded-2xl p-2 transition-transform group-hover:scale-105 border border-white/[0.1]">
                       <img src="/resources/assembly.png" alt="Assembly" className="max-w-full max-h-full object-contain" />
                     </div>
-                    <h5 className="text-[11px] text-white uppercase font-bold tracking-widest">Assembly Academy</h5>
+                    <h5 className="text-[11px] text-white uppercase font-bold tracking-widest text-left">Assembly Academy</h5>
                   </div>
                   <p className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-normal leading-loose italic text-left">
                     Advanced Code Intensive <br/> Lisbon, Portugal <br/> 2020 — 2023
@@ -227,9 +214,9 @@ const App = () => {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-40 border-t border-white/[0.03] text-left">
-          <div className="grid lg:grid-cols-[250px_1fr] gap-20 text-left">
-            <h3 className="text-[11px] uppercase tracking-[0.6em] text-white font-semibold italic reveal text-left">Experience</h3>
+        <section id="experience" className="py-40 border-t border-white/[0.08] text-left text-left">
+          <div className="grid lg:grid-cols-[250px_1fr] gap-20 text-left text-left">
+            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic reveal text-left">Experience</h3>
             <div className="space-y-32">
               {[
                 {
@@ -258,10 +245,10 @@ const App = () => {
                   tech: ['Blazor', '.NET Core', 'EF Core', 'xUnit', 'C#', 'JavaScript']
                 }
               ].map((exp, i) => (
-                <div key={i} className="reveal group text-left">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 border-b border-white/[0.03] pb-10 gap-8">
-                    <div className="flex items-center gap-10 text-left">
-                      <div className={`${exp.isLarge ? 'w-40 h-40' : 'w-24 h-24'} shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110 bg-white/[0.02] rounded-2xl border border-white/[0.05] p-3`}>
+                <div key={i} className="reveal group text-left text-left">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 border-b border-white/[0.08] pb-10 gap-8">
+                    <div className="flex items-center gap-10 text-left text-left text-left">
+                      <div className={`${exp.isLarge ? 'w-40 h-40' : 'w-24 h-24'} shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110 bg-white/[0.02] rounded-2xl border border-white/[0.1] p-3`}>
                         <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain rounded-lg" />
                       </div>
                       <div>
@@ -271,11 +258,11 @@ const App = () => {
                     </div>
                     <span className="text-lg font-medium text-white uppercase tracking-widest shrink-0 italic whitespace-nowrap">{exp.date}</span>
                   </div>
-                  <p className="text-gray-400 text-lg mb-12 max-w-3xl leading-relaxed font-light">{exp.desc}</p>
+                  <p className="text-gray-400 text-lg mb-12 max-w-3xl leading-relaxed font-light text-left text-left text-left">{exp.desc}</p>
                   <div className="flex flex-wrap gap-x-10 gap-y-5 text-[11px] font-medium text-white uppercase tracking-[0.3em]">
                     {exp.tech.map(s => (
                       <span key={s} className="flex items-center gap-3 text-left">
-                        <span className="w-1 h-1 bg-white/40 rounded-full"></span>
+                        <span className="w-1 h-1 bg-white/40 rounded-full text-left"></span>
                         {s}
                       </span>
                     ))}
@@ -287,13 +274,13 @@ const App = () => {
         </section>
 
         {/* Portfolio Grid */}
-        <section id="projects" className="py-40 border-t border-white/[0.03] text-left">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal text-white text-left">
-            <h3 className="text-[11px] uppercase tracking-[0.6em] font-semibold italic text-left">Portfolio</h3>
+        <section id="projects" className="py-40 border-t border-white/[0.08] text-left">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal text-white text-left text-left">
+            <h3 className="text-[10px] uppercase tracking-[0.6em] font-semibold italic text-left">Portfolio</h3>
             <p className="text-gray-400 text-[10px] font-normal uppercase tracking-[0.5em] mt-4 md:mt-0 italic">Architecture • Operations</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-px bg-white/[0.03] border border-white/[0.03] reveal rounded-[3rem] overflow-hidden shadow-2xl text-left">
+          <div className="grid md:grid-cols-2 gap-px bg-white/[0.08] border border-white/[0.08] reveal rounded-[3rem] overflow-hidden shadow-2xl text-left">
             {[
               {
                 title: "Workflow Automation Module",
@@ -326,13 +313,13 @@ const App = () => {
                 tags: ['NestJS', 'PostgreSQL']
               }
             ].map((p, i) => (
-              <div key={i} className="bg-[#050505] p-16 md:p-24 hover:bg-[#080808] transition-all group relative overflow-hidden text-left">
-                <div className="absolute top-0 right-0 w-1 h-0 bg-white/20 group-hover:h-full transition-all duration-700 text-left"></div>
+              <div key={i} className="bg-[#050505] p-16 md:p-24 hover:bg-[#080808] transition-all group relative overflow-hidden text-left text-left text-left">
+                <div className="absolute top-0 right-0 w-1 h-0 bg-white/20 group-hover:h-full transition-all duration-700"></div>
                 <div className="text-[10px] font-normal text-gray-400 uppercase tracking-[0.5em] mb-12 group-hover:text-white transition-colors italic text-left">{p.client}</div>
-                <h4 className="text-4xl font-normal text-white mb-8 tracking-widest uppercase leading-tight text-left">{p.title}</h4>
-                <p className="text-gray-400 text-lg mb-12 font-light leading-relaxed italic text-left">{p.desc}</p>
+                <h4 className="text-4xl font-normal text-white mb-8 tracking-widest uppercase leading-tight text-left text-left">{p.title}</h4>
+                <p className="text-gray-400 text-lg mb-12 font-light leading-relaxed italic text-left text-left text-left">{p.desc}</p>
                 <div className="flex flex-wrap gap-10 text-[11px] font-medium text-white uppercase tracking-[0.3em] text-left">
-                  {p.tags.map(t => <span key={t} className="group-hover:text-cyan-400 transition-colors text-left">{t}</span>)}
+                  {p.tags.map(t => <span key={t} className="group-hover:text-cyan-400 transition-colors text-left text-left">{t}</span>)}
                 </div>
               </div>
             ))}
@@ -340,7 +327,7 @@ const App = () => {
         </section>
 
         {/* Minimal Footer */}
-        <footer className="py-32 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-12 text-white text-left">
+        <footer className="py-32 border-t border-white/[0.08] flex flex-col md:flex-row justify-between items-center gap-12 text-white text-left text-left">
           <div className="text-[10px] font-normal text-gray-500 tracking-[0.6em] uppercase text-center md:text-left leading-loose italic">
             © 2026 MaxWare Protocol <br /> Architectural Design by Maksym Grebeniuk
           </div>
