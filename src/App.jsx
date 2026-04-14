@@ -77,7 +77,7 @@ const App = () => {
                 Full Stack .NET & React Engineer • Eindhoven, NL
               </h2>
               <p className="text-lg text-gray-400 max-w-xl mb-12 leading-relaxed font-light italic text-left">
-                "I architect software that automates real business operations. 7+ production platforms delivered."
+                "I architect software that automates real business operations — from manufacturing ERPs to restaurant ecosystems. 9+ production platforms delivered."
               </p>
               <div className="flex items-center gap-10">
                 <a href="#projects" className="border border-white/40 text-white px-10 py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] font-medium hover:bg-white hover:text-black transition-all">
@@ -153,7 +153,7 @@ const App = () => {
               </p>
               <div className="space-y-8 text-lg text-gray-400 font-light leading-relaxed">
                 <p>
-                  Born in Ukraine and raised in Portugal, I relocated to the Eindhoven tech hub to study Software Engineering at <span className="text-white font-normal">Fontys University</span>. I focus on building systems that solve operational problems through automation and modern technical architecture.
+                  Based in the Eindhoven tech hub, studying Software Engineering at <span className="text-white font-normal">Fontys University</span>. I build systems that solve real operational problems — automation engines, ERPs, and dashboards that replace manual work with software people actually want to use.
                 </p>
                 <p>
                   My character is built on years of high-level competition in professional sports. This background instilled a foundation of <span className="text-white italic text-left">discipline, resilience, and attention to detail</span> that I bring to every system I architect and every line of code I write.
@@ -225,7 +225,7 @@ const App = () => {
                   role: ".NET Developer Intern",
                   logo: "/resources/damenit_digitalworkmatelogo.png",
                   isLarge: true,
-                  desc: "Architecting a modular workflow automation engine for Digital WorkMate SaaS ERP. Implementing high-performance factory patterns and multi-provider AI via Semantic Kernel.",
+                  desc: "Architecting a modular workflow automation engine for the Digital WorkMate multi-tenant ERP. Event-driven factory-pattern runtime, SignalR + Quartz.NET triggers, and multi-provider AI actions wired through Semantic Kernel.",
                   tech: ['.NET Core', 'SignalR', 'Semantic Kernel', 'Quartz.NET', 'TypeScript', 'Webix']
                 },
                 {
@@ -233,7 +233,7 @@ const App = () => {
                   company: "Framax Solutions",
                   role: "Co-founder & Full Stack Developer",
                   logo: "/resources/framaxlogo.png",
-                  desc: "Lead engineer for digital transformation systems. Delivered custom CRM, booking ecosystems, and financial automation tools for SMBs using Next.js 15 and Supabase.",
+                  desc: "Co-founded Framax to build automation and AI products for SMBs. Shipped custom CRMs, booking ecosystems, and financial automation tooling on Next.js 15 and Supabase, end-to-end from design to deployment.",
                   tech: ['Next.js 15', 'Supabase', 'TypeScript', 'PostgreSQL RLS', 'Google APIs']
                 },
                 {
@@ -241,7 +241,7 @@ const App = () => {
                   company: "MAIN HUB",
                   role: "Junior Full Stack Developer",
                   logo: "/resources/mainhublogo.jpg",
-                  desc: "Built a production absence management platform with Blazor and .NET Core. Implemented role-based access and achieved 75%+ unit test coverage.",
+                  desc: "Shipped a production absence management platform on Blazor and .NET Core. Interactive calendars, multi-step approval flows, role-based access, and 75%+ unit test coverage.",
                   tech: ['Blazor', '.NET Core', 'EF Core', 'xUnit', 'C#', 'JavaScript']
                 }
               ].map((exp, i) => (
