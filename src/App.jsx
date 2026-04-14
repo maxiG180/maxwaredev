@@ -39,9 +39,9 @@ const App = () => {
       ></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-50 h-20 flex items-center border-b border-white/[0.03] bg-[#050505]/95 backdrop-blur-xl px-8 md:px-16">
+      <nav className="fixed top-0 left-0 w-full z-50 h-24 flex items-center border-b border-white/[0.03] bg-[#050505]/95 backdrop-blur-xl px-8 md:px-16">
         <div className="container mx-auto flex justify-between items-center">
-          <a href="#" className="text-white font-medium tracking-[0.2em] text-xs uppercase">
+          <a href="#" className="text-white font-medium tracking-[0.2em] text-sm uppercase">
             MaxWare
           </a>
           <div className="flex items-center gap-12">
@@ -54,7 +54,7 @@ const App = () => {
                 </li>
               ))}
             </ul>
-            <button onClick={() => setIsCvOpen(true)} className="text-[10px] uppercase tracking-[0.3em] font-medium text-white border border-white/20 px-4 py-2 rounded-sm hover:bg-white hover:text-black transition-all">
+            <button onClick={() => setIsCvOpen(true)} className="text-[10px] uppercase tracking-[0.3em] font-medium text-white border border-white/20 px-5 py-2 rounded-lg hover:bg-white hover:text-black transition-all">
               Curriculum
             </button>
           </div>
@@ -69,7 +69,7 @@ const App = () => {
             
             {/* Left: Bio */}
             <div className="max-w-2xl py-10">
-              <h1 className="text-5xl md:text-7xl font-normal tracking-tighter text-white mb-8 leading-none">
+              <h1 className="text-5xl md:text-8xl font-normal tracking-tighter text-white mb-10 leading-none">
                 Maksym Grebeniuk
               </h1>
               <h2 className="text-xl md:text-2xl text-gray-400 font-light mb-10 tracking-wide uppercase tracking-[0.1em]">
@@ -83,21 +83,21 @@ const App = () => {
                 automation engines and scalable enterprise SaaS architectures.
               </p>
               <div className="flex items-center gap-10">
-                <a href="#projects" className="border border-white/10 text-white px-8 py-3 rounded-sm text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all">
+                <a href="#projects" className="border border-white/10 text-white px-10 py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all">
                   Selected Work
                 </a>
                 <div className="flex gap-6">
-                  <a href="https://linkedin.com/in/maksym-grebeniuk-7a8b63174" target="_blank" className="text-gray-600 hover:text-white transition-colors"><i className="fab fa-linkedin-in text-lg"></i></a>
-                  <a href="https://github.com/maxiG180" target="_blank" className="text-gray-600 hover:text-white transition-colors"><i className="fab fa-github text-lg"></i></a>
-                  <a href="mailto:maksymgrebeniuk@gmail.com" className="text-gray-600 hover:text-white transition-colors"><i className="far fa-envelope text-lg"></i></a>
+                  <a href="https://linkedin.com/in/maksym-grebeniuk-7a8b63174" target="_blank" className="text-gray-600 hover:text-white transition-colors"><i className="fab fa-linkedin-in text-xl"></i></a>
+                  <a href="https://github.com/maxiG180" target="_blank" className="text-gray-600 hover:text-white transition-colors"><i className="fab fa-github text-xl"></i></a>
+                  <a href="mailto:maksymgrebeniuk@gmail.com" className="text-gray-600 hover:text-white transition-colors"><i className="far fa-envelope text-xl"></i></a>
                 </div>
               </div>
             </div>
 
-            {/* Right: Portfolio Identity */}
-            <div className="hidden lg:flex flex-col gap-6">
+            {/* Right: Asset Dashboard */}
+            <div className="hidden lg:flex flex-col gap-8">
               {/* Profile Image */}
-              <div className="w-[320px] h-[320px] rounded-sm overflow-hidden border border-white/[0.05] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 shadow-2xl">
+              <div className="w-[350px] h-[350px] rounded-[3rem] overflow-hidden border border-white/[0.05] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 shadow-2xl">
                 <img 
                   src="/resources/ProfilePic.jpeg" 
                   alt="Maksym Grebeniuk" 
@@ -108,19 +108,19 @@ const App = () => {
               {/* Document Access Card */}
               <div 
                 onClick={() => setIsCvOpen(true)}
-                className="w-[320px] p-6 bg-white/[0.02] border border-white/[0.05] rounded-sm cursor-pointer group hover:bg-white/[0.05] hover:border-white/20 transition-all"
+                className="w-[350px] p-8 bg-white/[0.02] border border-white/[0.05] rounded-[2rem] cursor-pointer group hover:bg-white/[0.05] hover:border-white/20 transition-all"
               >
-                <div className="flex items-center justify-between mb-4 text-gray-500">
-                  <div className="text-[10px] font-normal uppercase tracking-[0.3em] italic">Full Resume</div>
+                <div className="flex items-center justify-between mb-6 text-gray-500">
+                  <div className="text-[10px] font-normal uppercase tracking-[0.3em] italic">Dossier</div>
                   <i className="fas fa-expand text-xs group-hover:text-white transition-colors"></i>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-12 bg-[#111] rounded-sm flex items-center justify-center border border-white/10">
-                    <i className="far fa-file-pdf text-xl text-gray-600"></i>
+                <div className="flex items-center gap-6">
+                  <div className="w-12 h-14 bg-[#111] rounded-lg flex items-center justify-center border border-white/10 shadow-xl">
+                    <i className="far fa-file-pdf text-2xl text-gray-600"></i>
                   </div>
                   <div>
-                    <div className="text-sm font-normal text-white uppercase tracking-wider">Maksym_CV_2_0</div>
-                    <div className="text-[10px] text-gray-600 font-normal uppercase tracking-widest mt-1">Click to expand</div>
+                    <div className="text-sm font-normal text-white uppercase tracking-wider leading-none mb-2">Curriculum Vitae</div>
+                    <div className="text-[10px] text-gray-600 font-normal uppercase tracking-widest">Click to expand</div>
                   </div>
                 </div>
               </div>
@@ -137,7 +137,7 @@ const App = () => {
             >
               Close Viewer <i className="fas fa-times text-xl"></i>
             </button>
-            <div className="w-full max-w-5xl h-full bg-[#111] rounded-sm shadow-2xl overflow-hidden relative border border-white/10">
+            <div className="w-full max-w-5xl h-full bg-[#111] rounded-3xl shadow-2xl overflow-hidden relative border border-white/10">
               <iframe 
                 src="/resources/Maksym_CV_2_0.pdf" 
                 className="w-full h-full border-none"
@@ -151,45 +151,45 @@ const App = () => {
         <section id="about" className="py-40 border-t border-white/[0.03]">
           <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal">
             <h3 className="text-[10px] uppercase tracking-[0.5em] text-white font-medium italic">Academic Path</h3>
-            <div className="max-w-3xl space-y-16">
+            <div className="max-w-3xl space-y-24">
               
               <div className="space-y-12">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/[0.03] pb-8 text-white">
-                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-white p-2 rounded-sm shrink-0 flex items-center justify-center shadow-2xl">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-10 border-b border-white/[0.03] pb-12 text-white">
+                  <div className="flex items-center gap-10">
+                    <div className="w-24 h-24 shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110">
                       <img src="/resources/fontyslogo.png" alt="Fontys" className="max-w-full max-h-full object-contain" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-normal uppercase tracking-widest leading-none mb-2">Fontys University of Applied Sciences</h4>
-                      <p className="text-sm text-gray-400 font-light uppercase tracking-widest leading-relaxed">Bachelor of Science - BSc, Software Engineering</p>
+                      <h4 className="text-2xl text-white font-normal uppercase tracking-widest leading-none mb-3">Fontys University</h4>
+                      <p className="text-sm text-gray-400 font-light uppercase tracking-widest leading-relaxed">Bachelor of Science, Software Engineering</p>
                     </div>
                   </div>
                   <span className="text-[10px] font-normal text-gray-600 uppercase tracking-[0.4em] shrink-0">2024 - 2028</span>
                 </div>
-                <div className="space-y-4">
-                  <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 text-white text-[9px] font-black uppercase tracking-widest rounded-sm">
+                <div className="space-y-6">
+                  <div className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 text-white text-[10px] font-black uppercase tracking-widest rounded-lg">
                     Delta Excellence Programme
                   </div>
-                  <p className="text-gray-500 font-light leading-relaxed max-w-2xl text-lg">
-                    Selected for the elite programme representing the top performance tier of engineering students. Focused on high-level software architecture and professional leadership.
+                  <p className="text-gray-500 font-light leading-relaxed max-w-2xl text-xl">
+                    Selected for the elite programme representing the top performance tier of engineering students. Focused on high-level software architecture and leadership.
                   </p>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-12 pt-8">
-                <div className="p-8 bg-white/[0.02] border border-white/[0.03] rounded-sm">
-                  <div className="flex items-center gap-4 mb-6">
-                    <img src="/resources/inetelogo.png" alt="INETE" className="h-10 grayscale opacity-80 object-contain" />
-                    <h5 className="text-[10px] text-white uppercase font-black tracking-widest">INETE Lisbon</h5>
+              <div className="grid md:grid-cols-2 gap-16 pt-8">
+                <div className="p-10 bg-white/[0.02] border border-white/[0.03] rounded-[2rem] hover:bg-white/[0.04] transition-all">
+                  <div className="flex items-center gap-6 mb-8">
+                    <img src="/resources/inetelogo.png" alt="INETE" className="h-14 grayscale opacity-80 object-contain hover:grayscale-0 transition-all" />
+                    <h5 className="text-[11px] text-white uppercase font-black tracking-widest">INETE Lisbon</h5>
                   </div>
                   <p className="text-[11px] text-gray-500 uppercase tracking-[0.2em] font-normal leading-loose">
                     IT & Software Development <br/> Professional programming <br/> 2020 — 2023
                   </p>
                 </div>
-                <div className="p-8 bg-white/[0.02] border border-white/[0.03] rounded-sm">
-                  <div className="flex items-center gap-4 mb-6">
-                    <img src="/resources/assembly.png" alt="Assembly" className="h-10 grayscale opacity-80 object-contain" />
-                    <h5 className="text-[10px] text-white uppercase font-black tracking-widest">Assembly Academy</h5>
+                <div className="p-10 bg-white/[0.02] border border-white/[0.03] rounded-[2rem] hover:bg-white/[0.04] transition-all">
+                  <div className="flex items-center gap-6 mb-8">
+                    <img src="/resources/assembly.png" alt="Assembly" className="h-14 grayscale opacity-80 object-contain hover:grayscale-0 transition-all" />
+                    <h5 className="text-[11px] text-white uppercase font-black tracking-widest">Assembly Academy</h5>
                   </div>
                   <p className="text-[11px] text-gray-500 uppercase tracking-[0.2em] font-normal leading-loose">
                     Advanced Code Intensive <br/> Lisbon, Portugal <br/> 2020 — 2023
@@ -233,23 +233,23 @@ const App = () => {
                 }
               ].map((exp, i) => (
                 <div key={i} className="reveal group">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-white/[0.03] pb-6 gap-6">
-                    <div className="flex items-center gap-6">
-                      <div className="w-16 h-16 bg-white p-2 rounded-sm shrink-0 flex items-center justify-center shadow-2xl">
-                        <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 border-b border-white/[0.03] pb-10 gap-8">
+                    <div className="flex items-center gap-10">
+                      <div className="w-24 h-24 shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110">
+                        <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all" />
                       </div>
                       <div>
-                        <h4 className="text-2xl font-normal text-white tracking-widest uppercase">{exp.company}</h4>
-                        <div className="text-sm text-gray-400 font-light uppercase tracking-[0.2em] mt-1">{exp.role}</div>
+                        <h4 className="text-3xl font-normal text-white tracking-widest uppercase">{exp.company}</h4>
+                        <div className="text-sm text-gray-400 font-light uppercase tracking-[0.2em] mt-2">{exp.role}</div>
                       </div>
                     </div>
                     <span className="text-[10px] font-light text-gray-600 uppercase tracking-[0.4em] shrink-0">{exp.date}</span>
                   </div>
-                  <p className="text-gray-500 text-lg mb-10 max-w-3xl leading-relaxed font-extralight">{exp.desc}</p>
-                  <div className="flex flex-wrap gap-x-8 gap-y-4 text-[9px] font-normal text-gray-700 uppercase tracking-[0.3em]">
+                  <p className="text-gray-500 text-lg mb-12 max-w-3xl leading-relaxed font-extralight">{exp.desc}</p>
+                  <div className="flex flex-wrap gap-x-10 gap-y-5 text-[10px] font-normal text-gray-700 uppercase tracking-[0.3em]">
                     {exp.tech.map(s => (
-                      <span key={s} className="flex items-center gap-2">
-                        <span className="w-1 h-[1px] bg-white/20"></span>
+                      <span key={s} className="flex items-center gap-3">
+                        <span className="w-1 h-1 bg-white/20 rounded-full"></span>
                         {s}
                       </span>
                     ))}
@@ -262,12 +262,12 @@ const App = () => {
 
         {/* Case Studies Grid */}
         <section id="projects" className="py-40 border-t border-white/[0.03]">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal">
-            <h3 className="text-[10px] uppercase tracking-[0.5em] text-white font-medium italic">Case Studies</h3>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal text-white">
+            <h3 className="text-[10px] uppercase tracking-[0.5em] font-medium italic">Case Studies</h3>
             <p className="text-gray-600 text-[9px] font-normal uppercase tracking-[0.4em] mt-4 md:mt-0">Architecture • Implementation • Operations</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-px bg-white/[0.03] border border-white/[0.03] reveal">
+          <div className="grid md:grid-cols-2 gap-px bg-white/[0.03] border border-white/[0.03] reveal rounded-3xl overflow-hidden shadow-2xl">
             {[
               {
                 title: "Workflow Automation Module",
@@ -285,7 +285,7 @@ const App = () => {
                 title: "Package Management AI",
                 client: "SIOUX / Fontys",
                 desc: "Algorithmic optimization for building-wide delivery logistics using occupancy and volume algorithms.",
-                tags: ['NestJS', 'Algorithms']
+                tags: ['NestJS', 'PostgreSQL']
               },
               {
                 title: "Restaurant Operations Hub",
@@ -294,12 +294,12 @@ const App = () => {
                 tags: ['Operations', 'React']
               }
             ].map((p, i) => (
-              <div key={i} className="bg-[#050505] p-16 hover:bg-[#080808] transition-all group relative overflow-hidden">
+              <div key={i} className="bg-[#050505] p-16 md:p-20 hover:bg-[#080808] transition-all group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1 h-0 bg-white/20 group-hover:h-full transition-all duration-700"></div>
                 <div className="text-[9px] font-normal text-gray-600 uppercase tracking-[0.4em] mb-12 group-hover:text-white transition-colors">{p.client}</div>
-                <h4 className="text-3xl font-normal text-white mb-8 tracking-widest uppercase leading-none">{p.title}</h4>
+                <h4 className="text-4xl font-normal text-white mb-8 tracking-widest uppercase leading-tight">{p.title}</h4>
                 <p className="text-gray-500 text-lg mb-12 font-extralight leading-relaxed">{p.desc}</p>
-                <div className="flex gap-8 text-[9px] font-normal text-gray-700 uppercase tracking-[0.3em]">
+                <div className="flex gap-10 text-[9px] font-normal text-gray-700 uppercase tracking-[0.3em]">
                   {p.tags.map(t => <span key={t}>{t}</span>)}
                 </div>
               </div>
@@ -308,13 +308,13 @@ const App = () => {
         </section>
 
         {/* Minimal Footer */}
-        <footer className="py-24 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-12 text-white">
-          <div className="text-[9px] font-normal text-gray-700 tracking-[0.5em] uppercase text-center md:text-left leading-loose">
+        <footer className="py-32 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-12 text-white">
+          <div className="text-[10px] font-normal text-gray-700 tracking-[0.5em] uppercase text-center md:text-left leading-loose">
             © 2026 MaxWare Protocol <br /> Architectural Design by Maksym Grebeniuk
           </div>
           <div className="flex gap-16">
             {['Email', 'LinkedIn', 'GitHub'].map(link => (
-              <a key={link} href={link === 'Email' ? 'mailto:maksymgrebeniuk@gmail.com' : link === 'LinkedIn' ? 'https://linkedin.com/in/maksym-grebeniuk-7a8b63174' : 'https://github.com/maxiG180'} target="_blank" className="text-[9px] font-normal uppercase tracking-[0.4em] hover:text-white transition-colors border-b border-white/10 pb-1">
+              <a key={link} href={link === 'Email' ? 'mailto:maksymgrebeniuk@gmail.com' : link === 'LinkedIn' ? 'https://linkedin.com/in/maksym-grebeniuk-7a8b63174' : 'https://github.com/maxiG180'} target="_blank" className="text-[10px] font-normal uppercase tracking-[0.4em] hover:text-white transition-colors border-b border-white/10 pb-1">
                 {link}
               </a>
             ))}
@@ -342,7 +342,7 @@ const App = () => {
         h1, h2, h3, h4, h5, .logo { 
           font-family: 'Inter', sans-serif;
           font-weight: 300;
-          letter-spacing: -0.02em; 
+          letter-spacing: -0.03em; 
         }
         
         iframe {
