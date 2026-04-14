@@ -96,7 +96,7 @@ const App = () => {
                 Full Stack .NET & React Engineer • Eindhoven, NL
               </h2>
               <p className="text-base md:text-lg text-gray-400 max-w-xl mb-8 md:mb-12 leading-relaxed font-light italic">
-                "I build software that automates real business operations, from manufacturing ERPs to restaurant ecosystems. 9+ production platforms delivered."
+                "I build software that automates real business operations, from manufacturing ERPs to restaurant ecosystems. +7."
               </p>
               <div className="flex items-center gap-6 md:gap-10">
                 <a href="#projects" className="border border-white/40 text-white px-8 py-3 md:px-10 md:py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] font-medium hover:bg-white hover:text-black transition-all">
@@ -176,7 +176,7 @@ const App = () => {
                   I'm a software engineer based in Eindhoven, in my second year at <span className="text-white font-normal">Fontys University</span>. I started coding at 15 and have been building things professionally since 2023.
                 </p>
                 <p>
-                  In the last two years I shipped 9 production platforms across very different domains: a workflow engine for a manufacturing ERP at DAMEN-IT, a restaurant operations hub, an agency CRM, a campus delivery system, and more. Most of them built end-to-end.
+                  In the last two years I shipped 7 production platforms across very different domains: a workflow engine for a manufacturing ERP at DAMEN-IT, a restaurant operations hub, an agency CRM, a campus delivery system, and more. Most of them built end-to-end.
                 </p>
                 <p>
                   Before I focused on tech, I spent years competing in professional sports at a high level. That taught me to stay consistent under pressure, to find what is not working and fix it fast, and to care about the details that other people skip. I bring that same approach to every project.
