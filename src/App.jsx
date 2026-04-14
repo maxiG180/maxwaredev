@@ -168,19 +168,6 @@ const App = () => {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 border-t border-white/[0.08] pt-10 md:pt-16 gap-6 md:gap-8">
-              {[
-                { num: "9+", label: "Production Platforms" },
-                { num: "3+", label: "Years Building" },
-                { num: "4", label: "Tech Stacks" },
-                { num: "2", label: "Companies Founded" },
-              ].map((stat, i) => (
-                <div key={i}>
-                  <div className="text-3xl md:text-5xl font-light text-white mb-2 tracking-tight">{stat.num}</div>
-                  <div className="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-normal">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
