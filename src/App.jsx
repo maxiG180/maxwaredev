@@ -191,7 +191,7 @@ const App = () => {
               ].map((edu, i) => (
                 <div key={i} className={`flex items-center justify-between gap-10 py-10 border-b border-white/[0.08] group hover:bg-white/[0.01] transition-colors px-2 ${i === 0 ? 'pt-0' : ''}`}>
                   <div className="flex items-center gap-8">
-                    <div className="w-14 h-14 shrink-0 flex items-center justify-center bg-white/[0.02] rounded-xl border border-white/[0.08] p-2 transition-transform duration-300 group-hover:scale-105">
+                    <div className="w-20 h-20 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                       <img src={edu.logo} alt={edu.name} className="max-w-full max-h-full object-contain" />
                     </div>
                     <div>
@@ -240,7 +240,7 @@ const App = () => {
                 <div key={i} className="reveal group">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 border-b border-white/[0.08] pb-10 gap-8">
                     <div className="flex items-center gap-8">
-                      <div className="w-16 h-16 shrink-0 flex items-center justify-center bg-white/[0.02] rounded-xl border border-white/[0.08] p-2 transition-transform duration-300 group-hover:scale-105">
+                      <div className="w-20 h-20 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                         <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain" />
                       </div>
                       <div>
