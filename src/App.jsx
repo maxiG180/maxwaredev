@@ -173,7 +173,7 @@ const App = () => {
               </div>
               <div className="space-y-6 md:space-y-8 text-base md:text-lg text-gray-400 font-light leading-relaxed flex flex-col justify-center">
                 <p>
-                  I'm a software engineer based in Eindhoven, in my second year at <span className="text-white font-normal">Fontys University</span>. I started coding at 15 and have been building things professionally since 2023.
+                  I'm a software engineer based in Eindhoven, in my third year at <span className="text-white font-normal">Fontys University</span>. I started coding at 15 and have been building things professionally since 2023.
                 </p>
                 <p>
                   In the last two years I shipped 7 production platforms across very different domains: from enterprise workflow engines and CRMs to campus-scale delivery systems and automated booking ecosystems. Most of them built end-to-end.
