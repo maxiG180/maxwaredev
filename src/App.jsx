@@ -370,12 +370,10 @@ const App = () => {
           <div className="text-[10px] font-normal text-gray-500 tracking-[0.6em] uppercase text-center md:text-left leading-loose italic">
             © 2026 MaxWare Protocol <br /> Architectural Design by Maksym Grebeniuk
           </div>
-          <div className="flex gap-10 md:gap-16">
-            {['Email', 'LinkedIn', 'GitHub'].map(link => (
-              <a key={link} href={link === 'Email' ? 'mailto:maksymgrebeniuk@gmail.com' : link === 'LinkedIn' ? 'https://linkedin.com/in/maksym-grebeniuk-7a8b63174' : 'https://github.com/maxiG180'} target="_blank" className="text-[11px] font-normal uppercase tracking-[0.4em] hover:text-white transition-colors border-b border-white/10 pb-1 italic">
-                {link}
-              </a>
-            ))}
+          <div className="flex gap-8">
+            <a href="mailto:maksymgrebeniuk@gmail.com" className="text-gray-500 hover:text-white transition-colors text-xl"><i className="far fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/maksym-grebeniuk-7a8b63174" target="_blank" className="text-gray-500 hover:text-white transition-colors text-xl"><i className="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/maxiG180" target="_blank" className="text-gray-500 hover:text-white transition-colors text-xl"><i className="fab fa-github"></i></a>
           </div>
         </footer>
 
