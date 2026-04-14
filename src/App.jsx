@@ -70,9 +70,24 @@ const App = () => {
 
             {/* Left Bio */}
             <div className="max-w-2xl">
-              {/* Mobile profile pic */}
-              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border border-white/[0.1] grayscale mb-8 lg:hidden">
-                <img src="/resources/ProfilePic.jpeg" alt="Maksym Grebeniuk" className="w-full h-full object-cover object-top" />
+              {/* Mobile: profile pic + CV card side by side */}
+              <div className="flex items-stretch gap-4 mb-8 lg:hidden">
+                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-white/[0.1] grayscale shrink-0">
+                  <img src="/resources/ProfilePic.jpeg" alt="Maksym Grebeniuk" className="w-full h-full object-cover object-top" />
+                </div>
+                <div
+                  onClick={() => setIsCvOpen(true)}
+                  className="flex-1 p-4 bg-white/[0.02] border border-white/[0.08] rounded-2xl cursor-pointer group hover:bg-white/[0.05] hover:border-white/30 transition-all flex flex-col justify-between"
+                >
+                  <div className="flex items-center justify-between text-gray-400">
+                    <div className="text-[9px] uppercase tracking-[0.3em] italic">Full Dossier</div>
+                    <i className="fas fa-expand text-[10px] group-hover:text-white transition-colors"></i>
+                  </div>
+                  <div>
+                    <div className="text-xs font-medium text-white uppercase tracking-wider leading-none mb-1">Technical CV</div>
+                    <div className="text-[9px] text-gray-500 font-light uppercase tracking-widest italic">Tap to open</div>
+                  </div>
+                </div>
               </div>
               <h1 className="text-4xl sm:text-6xl md:text-8xl font-medium tracking-tighter text-white mb-6 leading-none uppercase">
                 Maksym Grebeniuk
