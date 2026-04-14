@@ -143,9 +143,9 @@ const App = () => {
           </div>
         )}
 
-        {/* Identity Section - Simplified Copy */}
-        <section id="about" className="py-40 border-t border-white/[0.08] text-left">
-          <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal text-left">
+        {/* Identity Section */}
+        <section id="about" className="py-40 border-t border-white/[0.08]">
+          <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal">
             <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic">Identity</h3>
             <div className="max-w-3xl space-y-10">
               <p className="text-2xl md:text-4xl text-white font-light leading-tight tracking-tight">
@@ -156,7 +156,7 @@ const App = () => {
                   Based in the Eindhoven tech hub, studying Software Engineering at <span className="text-white font-normal">Fontys University</span>. I build systems that solve real operational problems — automation engines, ERPs, and dashboards that replace manual work with software people actually want to use.
                 </p>
                 <p>
-                  My character is built on years of high-level competition in professional sports. This background instilled a foundation of <span className="text-white italic text-left">discipline, resilience, and attention to detail</span> that I bring to every system I architect and every line of code I write.
+                  My character is built on years of high-level competition in professional sports. This background instilled a foundation of <span className="text-white italic">discipline, resilience, and attention to detail</span> that I bring to every system I architect and every line of code I write.
                 </p>
               </div>
             </div>
@@ -164,72 +164,64 @@ const App = () => {
         </section>
 
         {/* Academic Section */}
-        <section id="education" className="py-40 border-t border-white/[0.08] text-left">
-          <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal text-left">
-            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic text-left">Education</h3>
-            <div className="max-w-3xl space-y-24">
-              
-              <div className="space-y-12">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-10 border-b border-white/[0.08] pb-12 text-white text-left">
-                  <div className="flex items-center gap-10 text-left">
-                    <div className="w-24 h-24 shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110 p-2 bg-white/[0.02] rounded-2xl border border-white/[0.1]">
-                      <img src="/resources/fontyslogo.png" alt="Fontys" className="max-w-full max-h-full object-contain" />
+        <section id="education" className="py-40 border-t border-white/[0.08]">
+          <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal">
+            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic">Education</h3>
+            <div className="max-w-3xl">
+              {[
+                {
+                  logo: "/resources/fontyslogo.png",
+                  name: "Fontys University of Applied Sciences",
+                  degree: "BSc Software Engineering — Delta Excellence Programme",
+                  year: "2024 — 2028",
+                  primary: true
+                },
+                {
+                  logo: "/resources/inetelogo.png",
+                  name: "INETE Lisbon",
+                  degree: "IT & Software Development — Professional Track",
+                  year: "2020 — 2023"
+                },
+                {
+                  logo: "/resources/assembly.png",
+                  name: "Assembly Academy",
+                  degree: "Advanced Code Intensive — Lisbon, Portugal",
+                  year: "2020 — 2023"
+                }
+              ].map((edu, i) => (
+                <div key={i} className={`flex items-center justify-between gap-10 py-10 border-b border-white/[0.08] group hover:bg-white/[0.01] transition-colors px-2 ${i === 0 ? 'pt-0' : ''}`}>
+                  <div className="flex items-center gap-8">
+                    <div className="w-14 h-14 shrink-0 flex items-center justify-center bg-white/[0.02] rounded-xl border border-white/[0.08] p-2 transition-transform duration-300 group-hover:scale-105">
+                      <img src={edu.logo} alt={edu.name} className="max-w-full max-h-full object-contain" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-medium uppercase tracking-widest leading-none mb-3 text-left">Fontys University</h4>
-                      <p className="text-sm text-gray-400 font-normal uppercase tracking-widest leading-relaxed italic text-left text-left">BSc Software Engineering • Delta Excellence Programme</p>
+                      <h4 className={`${edu.primary ? 'text-xl' : 'text-base'} font-medium text-white uppercase tracking-wide leading-none mb-2`}>{edu.name}</h4>
+                      <p className="text-sm text-gray-500 font-light italic">{edu.degree}</p>
                     </div>
                   </div>
-                  <span className="text-lg font-medium text-white uppercase tracking-widest shrink-0 italic whitespace-nowrap">2024 - 2028</span>
+                  <span className="text-sm text-gray-400 uppercase tracking-widest shrink-0 whitespace-nowrap tabular-nums">{edu.year}</span>
                 </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-16 pt-8 text-left text-left">
-                <div className="p-10 bg-white/[0.01] border border-white/[0.08] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
-                  <div className="flex items-center gap-6 mb-8 text-left text-left">
-                    <div className="w-20 h-20 flex items-center justify-center bg-white/[0.02] rounded-2xl p-2 transition-transform group-hover:scale-105 border border-white/[0.1]">
-                      <img src="/resources/inetelogo.png" alt="INETE" className="max-w-full max-h-full object-contain" />
-                    </div>
-                    <h5 className="text-[11px] text-white uppercase font-bold tracking-widest text-left">INETE Lisbon</h5>
-                  </div>
-                  <p className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-normal leading-loose text-left">
-                    IT & Software Development <br/> Professional track <br/> 2020 — 2023
-                  </p>
-                </div>
-                <div className="p-10 bg-white/[0.01] border border-white/[0.08] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
-                  <div className="flex items-center gap-6 mb-8 text-left text-left">
-                    <div className="w-28 h-28 flex items-center justify-center bg-white/[0.02] rounded-2xl p-2 transition-transform group-hover:scale-105 border border-white/[0.1]">
-                      <img src="/resources/assembly.png" alt="Assembly" className="max-w-full max-h-full object-contain" />
-                    </div>
-                    <h5 className="text-[11px] text-white uppercase font-bold tracking-widest text-left">Assembly Academy</h5>
-                  </div>
-                  <p className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-normal leading-loose italic text-left">
-                    Advanced Code Intensive <br/> Lisbon, Portugal <br/> 2020 — 2023
-                  </p>
-                </div>
-              </div>
-
+              ))}
             </div>
           </div>
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-40 border-t border-white/[0.08] text-left text-left">
-          <div className="grid lg:grid-cols-[250px_1fr] gap-20 text-left text-left">
-            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic reveal text-left">Experience</h3>
-            <div className="space-y-32">
+        <section id="experience" className="py-40 border-t border-white/[0.08]">
+          <div className="grid lg:grid-cols-[250px_1fr] gap-20">
+            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic reveal">Experience</h3>
+            <div className="space-y-24">
               {[
                 {
-                  date: "Feb 2026 - Present",
+                  date: "Feb 2026 — Present",
                   company: "DAMEN-IT",
                   role: ".NET Developer Intern",
                   logo: "/resources/damenit_digitalworkmatelogo.png",
-                  isLarge: true,
                   desc: "Architecting a modular workflow automation engine for the Digital WorkMate multi-tenant ERP. Event-driven factory-pattern runtime, SignalR + Quartz.NET triggers, and multi-provider AI actions wired through Semantic Kernel.",
                   tech: ['.NET Core', 'SignalR', 'Semantic Kernel', 'Quartz.NET', 'TypeScript', 'Webix']
                 },
                 {
-                  date: "Apr 2025 - Present",
+                  date: "Apr 2025 — Present",
                   company: "Framax Solutions",
                   role: "Co-founder & Full Stack Developer",
                   logo: "/resources/framaxlogo.png",
@@ -237,7 +229,7 @@ const App = () => {
                   tech: ['Next.js 15', 'Supabase', 'TypeScript', 'PostgreSQL RLS', 'Google APIs']
                 },
                 {
-                  date: "Mar 2023 - Jun 2023",
+                  date: "Mar 2023 — Jun 2023",
                   company: "MAIN HUB",
                   role: "Junior Full Stack Developer",
                   logo: "/resources/mainhublogo.jpg",
@@ -245,24 +237,24 @@ const App = () => {
                   tech: ['Blazor', '.NET Core', 'EF Core', 'xUnit', 'C#', 'JavaScript']
                 }
               ].map((exp, i) => (
-                <div key={i} className="reveal group text-left text-left">
+                <div key={i} className="reveal group">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 border-b border-white/[0.08] pb-10 gap-8">
-                    <div className="flex items-center gap-10 text-left text-left text-left">
-                      <div className={`${exp.isLarge ? 'w-40 h-40' : 'w-24 h-24'} shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110 bg-white/[0.02] rounded-2xl border border-white/[0.1] p-3`}>
-                        <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain rounded-lg" />
+                    <div className="flex items-center gap-8">
+                      <div className="w-16 h-16 shrink-0 flex items-center justify-center bg-white/[0.02] rounded-xl border border-white/[0.08] p-2 transition-transform duration-300 group-hover:scale-105">
+                        <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain" />
                       </div>
                       <div>
-                        <h4 className="text-3xl font-medium text-white tracking-[0.1em] uppercase leading-none">{exp.company}</h4>
-                        <div className="text-sm text-gray-400 font-normal uppercase tracking-[0.3em] mt-4 leading-none italic">{exp.role}</div>
+                        <h4 className="text-2xl font-medium text-white tracking-wide uppercase leading-none">{exp.company}</h4>
+                        <div className="text-sm text-gray-500 font-light mt-2 italic">{exp.role}</div>
                       </div>
                     </div>
-                    <span className="text-lg font-medium text-white uppercase tracking-widest shrink-0 italic whitespace-nowrap">{exp.date}</span>
+                    <span className="text-sm text-gray-400 uppercase tracking-widest shrink-0 whitespace-nowrap tabular-nums">{exp.date}</span>
                   </div>
-                  <p className="text-gray-400 text-lg mb-12 max-w-3xl leading-relaxed font-light text-left text-left text-left">{exp.desc}</p>
-                  <div className="flex flex-wrap gap-x-10 gap-y-5 text-[11px] font-medium text-white uppercase tracking-[0.3em]">
+                  <p className="text-gray-400 text-base mb-10 max-w-3xl leading-relaxed font-light">{exp.desc}</p>
+                  <div className="flex flex-wrap gap-x-8 gap-y-4 text-[11px] font-medium text-gray-300 uppercase tracking-[0.3em]">
                     {exp.tech.map(s => (
-                      <span key={s} className="flex items-center gap-3 text-left">
-                        <span className="w-1 h-1 bg-white/40 rounded-full text-left"></span>
+                      <span key={s} className="flex items-center gap-3">
+                        <span className="w-1 h-1 bg-white/30 rounded-full"></span>
                         {s}
                       </span>
                     ))}
@@ -274,13 +266,13 @@ const App = () => {
         </section>
 
         {/* Portfolio Grid */}
-        <section id="projects" className="py-40 border-t border-white/[0.08] text-left">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal text-white text-left text-left">
-            <h3 className="text-[10px] uppercase tracking-[0.6em] font-semibold italic text-left">Portfolio</h3>
+        <section id="projects" className="py-40 border-t border-white/[0.08]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal">
+            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic">Portfolio</h3>
             <p className="text-gray-400 text-[10px] font-normal uppercase tracking-[0.5em] mt-4 md:mt-0 italic">Architecture • Operations</p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-px bg-white/[0.08] border border-white/[0.08] reveal rounded-[3rem] overflow-hidden shadow-2xl text-left">
+
+          <div className="grid md:grid-cols-2 gap-px bg-white/[0.08] border border-white/[0.08] reveal rounded-[3rem] overflow-hidden shadow-2xl">
             {[
               {
                 title: "Workflow Automation Module",
@@ -337,13 +329,13 @@ const App = () => {
                 tags: ['C# / .NET Core', 'Blazor', 'EF Core']
               }
             ].map((p, i, arr) => (
-              <div key={i} className={`bg-[#050505] p-16 md:p-24 hover:bg-[#080808] transition-all group relative overflow-hidden text-left text-left text-left ${i === arr.length - 1 && arr.length % 2 === 1 ? 'md:col-span-2' : ''}`}>
+              <div key={i} className={`bg-[#050505] p-12 md:p-16 hover:bg-[#080808] transition-all group relative overflow-hidden ${i === arr.length - 1 && arr.length % 2 === 1 ? 'md:col-span-2' : ''}`}>
                 <div className="absolute top-0 right-0 w-1 h-0 bg-white/20 group-hover:h-full transition-all duration-700"></div>
-                <div className="text-[10px] font-normal text-gray-400 uppercase tracking-[0.5em] mb-12 group-hover:text-white transition-colors italic text-left">{p.client}</div>
-                <h4 className="text-4xl font-normal text-white mb-8 tracking-widest uppercase leading-tight text-left text-left">{p.title}</h4>
-                <p className="text-gray-400 text-lg mb-12 font-light leading-relaxed italic text-left text-left text-left">{p.desc}</p>
-                <div className="flex flex-wrap gap-10 text-[11px] font-medium text-white uppercase tracking-[0.3em] text-left">
-                  {p.tags.map(t => <span key={t} className="group-hover:text-cyan-400 transition-colors text-left text-left">{t}</span>)}
+                <div className="text-[10px] font-normal text-gray-500 uppercase tracking-[0.5em] mb-6 group-hover:text-gray-300 transition-colors italic">{p.client}</div>
+                <h4 className="text-2xl font-medium text-white mb-5 uppercase tracking-wide leading-tight">{p.title}</h4>
+                <p className="text-gray-400 text-sm mb-8 font-light leading-relaxed">{p.desc}</p>
+                <div className="flex flex-wrap gap-6 text-[10px] font-medium text-gray-400 uppercase tracking-[0.3em]">
+                  {p.tags.map(t => <span key={t} className="group-hover:text-cyan-400 transition-colors">{t}</span>)}
                 </div>
               </div>
             ))}
