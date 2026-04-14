@@ -241,7 +241,7 @@ const App = () => {
                   company: "MAIN HUB",
                   role: "Junior Full Stack Developer",
                   logo: "/resources/mainhublogo.jpg",
-                  desc: "Shipped a production absence management platform on Blazor and .NET Core. Interactive calendars, multi-step approval flows, role-based access, and 75%+ unit test coverage.",
+                  desc: "Contributed to an enterprise-grade absence management platform, engineered against Microsoft's layered .NET architecture — EF Core, repository and service patterns, dependency injection, and Blazor component conventions. Interactive calendars, multi-step approval flows, and role-based access across HR, managers, and employees.",
                   tech: ['Blazor', '.NET Core', 'EF Core', 'xUnit', 'C#', 'JavaScript']
                 }
               ].map((exp, i) => (
@@ -336,8 +336,8 @@ const App = () => {
                 desc: "Enterprise absence platform with interactive calendars, multi-step approval flows, and role-based access across HR, managers, and employees. Blazor frontend over EF Core with 75%+ unit test coverage.",
                 tags: ['C# / .NET Core', 'Blazor', 'EF Core']
               }
-            ].map((p, i) => (
-              <div key={i} className="bg-[#050505] p-16 md:p-24 hover:bg-[#080808] transition-all group relative overflow-hidden text-left text-left text-left">
+            ].map((p, i, arr) => (
+              <div key={i} className={`bg-[#050505] p-16 md:p-24 hover:bg-[#080808] transition-all group relative overflow-hidden text-left text-left text-left ${i === arr.length - 1 && arr.length % 2 === 1 ? 'md:col-span-2' : ''}`}>
                 <div className="absolute top-0 right-0 w-1 h-0 bg-white/20 group-hover:h-full transition-all duration-700"></div>
                 <div className="text-[10px] font-normal text-gray-400 uppercase tracking-[0.5em] mb-12 group-hover:text-white transition-colors italic text-left">{p.client}</div>
                 <h4 className="text-4xl font-normal text-white mb-8 tracking-widest uppercase leading-tight text-left text-left">{p.title}</h4>
