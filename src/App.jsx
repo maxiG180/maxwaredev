@@ -284,33 +284,57 @@ const App = () => {
             {[
               {
                 title: "Workflow Automation Module",
-                client: "DAMEN-IT",
-                desc: "An event-driven visual engine for manufacturing workflows. Built on ASP.NET Core with dynamic form generation. Reduced manual work by 1-2 hours daily per developer.",
-                tags: ['Enterprise SaaS', '.NET Core', 'AI']
+                client: "DAMEN-IT / DigitalWorkmate",
+                desc: "Modular, event-driven automation engine for a multi-tenant manufacturing ERP. A drag-and-drop builder wires SignalR realtime triggers and Quartz.NET schedules into a factory-pattern runtime where new workflow items auto-register at startup. Tenant isolation enforced at the DAL, with AI actions piped through Semantic Kernel across Ollama, OpenAI, and Google providers.",
+                tags: ['.NET Core', 'SignalR', 'Semantic Kernel']
               },
               {
-                title: "Absence Management Platform",
-                client: "MAIN HUB",
-                desc: "Enterprise platform featuring interactive calendars, multi-step approval workflows, and role-based access. Achieved 75%+ unit test coverage.",
-                tags: ['C# / .NET Core', 'Blazor', 'EF Core']
-              },
-              {
-                title: "Perola do Vouga Ecosystem",
-                client: "Restaurant SaaS",
-                desc: "Full-cycle take-away ecosystem with automated WhatsApp-to-Menu parsing engine that reduced manual data entry latency by 99%.",
+                title: "Pérola do Vouga Ecosystem",
+                client: "Restaurant Operations Hub",
+                desc: "End-to-end digital platform for a traditional Portuguese restaurant. A customer-facing site and ordering flow sit alongside a WhatsApp-to-menu parsing engine that ingests daily specials automatically, and a realtime financial dashboard tracking sales, expenses, and margin in one pane.",
                 tags: ['Next.js', 'Supabase', 'Parsing Engine']
               },
               {
                 title: "Framax Solutions Platform",
                 client: "Agency OS",
-                desc: "Dual-purpose ERP/CRM system managing agency lifecycles and automated financial quote generation.",
-                tags: ['Next.js 15', 'Supabase RLS']
+                desc: "Dual-surface product: a conversion-tuned agency landing page and a secure internal CRM/ERP dashboard running on the same stack. PostgreSQL with row-level security, automated PDF quotes and invoices via jsPDF, Supabase triggers syncing auth and client records live, plus a Google Sheets + Calendar lead pipeline and a bilingual custom i18n engine.",
+                tags: ['Next.js 15', 'Supabase RLS', 'jsPDF']
               },
               {
-                title: "Package Management AI",
-                client: "SIOUX / Fontys",
-                desc: "Algorithmic optimization for building-wide delivery logistics using occupancy and volume algorithms.",
-                tags: ['NestJS', 'PostgreSQL']
+                title: "SIOUX Package Management",
+                client: "SIOUX Technologies / Fontys",
+                desc: "Fullstack delivery platform replacing manual package handling across an 8-building campus. A smart-shelf algorithm computes realtime occupancy, volume, and weight to suggest optimal storage; staff register packages via live camera scanning, drag-and-drop uploads, or manual entry. Dockerized NestJS backend deployed through GitLab CI.",
+                tags: ['NestJS', 'PostgreSQL', 'Docker CI']
+              },
+              {
+                title: "TrimminFlow",
+                client: "Fontys ICT",
+                desc: "Barbershop booking platform with realtime calendar sync and server-side conflict detection. Customers book through shop-specific QR codes while owners manage shifts, breaks, and appointments from a single view. Spring Boot backend with unit testing and a Railway/Vercel CI/CD pipeline.",
+                tags: ['Spring Boot', 'Next.js', 'CI/CD']
+              },
+              {
+                title: "15 Minute Coaches",
+                client: "Fontys University",
+                desc: "Digital platform pairing students with industry professionals for structured coaching sessions. Multi-stage coach application and approval flow, automated session emails and reminders, plus an admin dashboard with bulk mailing, document generation, and anonymous QR-based student feedback collection.",
+                tags: ['React.js', 'Admin Dashboard', 'Email Automation']
+              },
+              {
+                title: "EventXpert",
+                client: "Fontys University",
+                desc: "Festival management ecosystem unifying the customer and organizer sides. QR-code ticketing and entry scanning, camping spot reservations, in-event retail and rentals, and a digital wallet for cashless transactions. Organizer tooling streamlines planning, logistics, and live operations.",
+                tags: ['.NET Framework', 'C#', 'QR / Wallet']
+              },
+              {
+                title: "FitStatz",
+                client: "Personalized Fitness",
+                desc: "Fitness tracking platform with workout, macro, and hydration logging. A goal-aware recommendation engine tailors plans for muscle gain or fat loss, and visual charts surface daily and weekly progress. Razor Pages web app paired with a desktop admin app for coaching oversight and reporting.",
+                tags: ['ASP.NET Core', 'Razor Pages', 'SCRUM']
+              },
+              {
+                title: "Absence Management Platform",
+                client: "MAIN HUB",
+                desc: "Enterprise absence platform with interactive calendars, multi-step approval flows, and role-based access across HR, managers, and employees. Blazor frontend over EF Core with 75%+ unit test coverage.",
+                tags: ['C# / .NET Core', 'Blazor', 'EF Core']
               }
             ].map((p, i) => (
               <div key={i} className="bg-[#050505] p-16 md:p-24 hover:bg-[#080808] transition-all group relative overflow-hidden text-left text-left text-left">
