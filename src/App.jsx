@@ -39,12 +39,12 @@ const App = () => {
       ></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-50 h-20 flex items-center border-b border-white/[0.03] bg-[#050505]/95 backdrop-blur-xl px-6 md:px-16 text-white">
-        <div className="container mx-auto flex justify-between items-center">
+      <nav className="fixed top-0 left-0 w-full z-50 h-20 flex items-center border-b border-white/[0.03] bg-[#050505]/95 backdrop-blur-xl px-8 md:px-16 text-white">
+        <div className="container mx-auto flex justify-between items-center text-white">
           <a href="#" className="font-medium tracking-[0.2em] text-sm uppercase">
             MaxWare
           </a>
-          <div className="flex items-center gap-6 md:gap-12 text-gray-400">
+          <div className="flex items-center gap-6 md:gap-12">
             <ul className="hidden md:flex items-center gap-10">
               {['About', 'Experience', 'Projects'].map(item => (
                 <li key={item}>
@@ -91,15 +91,15 @@ const App = () => {
 
             {/* Right Portfolio Dashboard */}
             <div className="flex flex-col gap-8 w-full max-w-[350px] mx-auto lg:mx-0">
-              <div className="aspect-square rounded-[3rem] overflow-hidden border border-white/[0.05] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 shadow-2xl">
+              <div className="aspect-square rounded-[3rem] overflow-hidden border border-white/[0.05] shadow-2xl">
                 <img src="/resources/ProfilePic.jpeg" alt="Maksym Grebeniuk" className="w-full h-full object-cover" />
               </div>
               <div 
                 onClick={() => setIsCvOpen(true)}
                 className="p-8 bg-white/[0.01] border border-white/[0.05] rounded-[2rem] cursor-pointer group hover:bg-white/[0.03] hover:border-white/20 transition-all shadow-2xl"
               >
-                <div className="flex items-center justify-between mb-6 text-gray-600 font-light">
-                  <div className="text-[10px] uppercase tracking-[0.3em] italic">Official Dossier</div>
+                <div className="flex items-center justify-between mb-6 text-gray-600 font-light text-left">
+                  <div className="text-[10px] uppercase tracking-[0.3em] italic text-left">Official Dossier</div>
                   <i className="fas fa-expand text-xs group-hover:text-white transition-colors"></i>
                 </div>
                 <div className="flex items-center gap-6 text-left">
@@ -131,21 +131,21 @@ const App = () => {
           </div>
         )}
 
-        {/* Academic Section - Updated from CV */}
+        {/* Academic Section */}
         <section id="about" className="py-40 border-t border-white/[0.03]">
           <div className="grid lg:grid-cols-[250px_1fr] gap-12 lg:gap-20 reveal text-left">
             <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-light italic">Academic Track</h3>
             <div className="max-w-3xl space-y-24">
               
               <div className="space-y-12">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-10 border-b border-white/[0.03] pb-12 text-white text-left">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-10 border-b border-white/[0.03] pb-12 text-white">
                   <div className="flex items-center gap-10 text-left">
                     <div className="w-24 h-24 shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110">
                       <img src="/resources/fontyslogo.png" alt="Fontys" className="max-w-full max-h-full object-contain" />
                     </div>
                     <div>
                       <h4 className="text-2xl font-light uppercase tracking-[0.2em] leading-none mb-3 text-left">Fontys University of Applied Sciences</h4>
-                      <p className="text-sm text-gray-400 font-extralight uppercase tracking-widest leading-relaxed italic text-left">Bachelor of Science, Software Engineering • Eindhoven</p>
+                      <p className="text-sm text-gray-400 font-extralight uppercase tracking-widest leading-relaxed italic text-left text-left">Bachelor of Science, Software Engineering • Eindhoven</p>
                     </div>
                   </div>
                   <span className="text-[9px] font-light text-gray-600 uppercase tracking-[0.5em] shrink-0 italic whitespace-nowrap text-right">Expected Feb 2028</span>
@@ -163,7 +163,7 @@ const App = () => {
               <div className="grid md:grid-cols-2 gap-16 pt-8 text-left">
                 <div className="p-10 bg-white/[0.01] border border-white/[0.03] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
                   <div className="flex items-center gap-6 mb-8 text-left">
-                    <img src="/resources/inetelogo.png" alt="INETE" className="h-12 grayscale opacity-80 object-contain invert brightness-200 group-hover:grayscale-0 transition-all shrink-0" />
+                    <img src="/resources/inetelogo.png" alt="INETE" className="h-14 object-contain transition-all shrink-0" />
                     <h5 className="text-[9px] text-white uppercase font-light tracking-[0.4em] text-left">INETE Lisbon</h5>
                   </div>
                   <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-extralight leading-loose italic text-left">
@@ -172,7 +172,7 @@ const App = () => {
                 </div>
                 <div className="p-10 bg-white/[0.01] border border-white/[0.03] rounded-[2.5rem] hover:bg-white/[0.02] transition-all group">
                   <div className="flex items-center gap-6 mb-8 text-left">
-                    <img src="/resources/assembly.png" alt="Assembly" className="h-12 grayscale opacity-80 object-contain group-hover:grayscale-0 transition-all shrink-0" />
+                    <img src="/resources/assembly.png" alt="Assembly" className="h-14 object-contain transition-all shrink-0" />
                     <h5 className="text-[9px] text-white uppercase font-light tracking-[0.4em] text-left">Assembly Academy</h5>
                   </div>
                   <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-extralight leading-loose italic text-left">
@@ -185,7 +185,7 @@ const App = () => {
           </div>
         </section>
 
-        {/* Experience Section - Bullet Points from CV */}
+        {/* Experience Section */}
         <section id="experience" className="py-40 border-t border-white/[0.03]">
           <div className="grid lg:grid-cols-[250px_1fr] gap-12 lg:gap-20 text-left">
             <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-light italic reveal">Professional Journey</h3>
@@ -196,7 +196,7 @@ const App = () => {
                   company: "DAMEN-IT",
                   role: ".NET Full Stack Developer Intern",
                   logo: "/resources/damenit_digitalworkmatelogo.png",
-                  isBlackLogo: true,
+                  isLarge: true,
                   desc: "Engineering a Workflow Automation module for a multi-tenant SaaS ERP (.NET Core) with a drag-and-drop editor. Architecting for enterprise scalability.",
                   bullets: [
                     "Increased developer productivity by 1-2 hours daily by automating release notes from Kanban boards.",
@@ -214,7 +214,7 @@ const App = () => {
                   desc: "Leading a web agency delivering 7+ full-stack platforms. Digitizing manual workflows for Portuguese SMBs through custom ERP/CRM solutions.",
                   bullets: [
                     "Led the full SDLC from technical pitch to deployment for 7+ production systems.",
-                    "Architected high-conversion agency platforms with automated quote generation.",
+                    "Architecting high-conversion agency platforms with automated quote generation.",
                     "Using Next.js 15, Supabase, and PostgreSQL with Row Level Security."
                   ],
                   tech: ['Next.js 15', 'React', 'Supabase', 'TypeScript', 'PostgreSQL RLS', 'Tailwind CSS']
@@ -236,11 +236,11 @@ const App = () => {
                 <div key={i} className="reveal group text-left">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 border-b border-white/[0.03] pb-10 gap-8">
                     <div className="flex items-center gap-10 text-left">
-                      <div className="w-24 h-24 shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110">
+                      <div className={`${exp.isLarge ? 'w-32 h-32' : 'w-24 h-24'} shrink-0 flex items-center justify-center transition-transform duration-500 hover:scale-110`}>
                         <img 
                           src={exp.logo} 
                           alt={exp.company} 
-                          className={`max-w-full max-h-full object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all ${exp.isBlackLogo ? 'invert brightness-200' : ''}`} 
+                          className="max-w-full max-h-full object-contain" 
                         />
                       </div>
                       <div>
@@ -254,7 +254,7 @@ const App = () => {
                     <p className="text-gray-300 text-lg font-light leading-relaxed text-left">{exp.desc}</p>
                     <ul className="space-y-4">
                       {exp.bullets.map((b, idx) => (
-                        <li key={idx} className="flex gap-4 text-sm text-gray-500 font-light italic text-left">
+                        <li key={idx} className="flex gap-4 text-sm text-gray-500 font-light italic text-left text-left">
                           <span className="text-white font-normal">→</span>
                           {b}
                         </li>
@@ -275,11 +275,11 @@ const App = () => {
           </div>
         </section>
 
-        {/* Projects Grid - Details from CV */}
+        {/* Projects Grid */}
         <section id="projects" className="py-40 border-t border-white/[0.03]">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal text-white text-left">
-            <h3 className="text-[10px] uppercase tracking-[0.6em] font-light italic">Technical Portfolio</h3>
-            <p className="text-gray-500 text-[9px] font-light uppercase tracking-[0.5em] mt-4 md:mt-0 italic">Selected Engineering Projects</p>
+            <h3 className="text-[10px] uppercase tracking-[0.6em] font-light italic text-left">Technical Portfolio</h3>
+            <p className="text-gray-500 text-[9px] font-light uppercase tracking-[0.5em] mt-4 md:mt-0 italic whitespace-nowrap">Selected Engineering Projects</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-px bg-white/[0.03] border border-white/[0.03] reveal rounded-[3rem] overflow-hidden shadow-2xl">
@@ -298,7 +298,7 @@ const App = () => {
               },
               {
                 title: "SIOUX Package System",
-                client: "SIOUX campus / Fontys",
+                client: "Fontys / SIOUX",
                 desc: "Automated shelf assignment and tracking interface for an 8-building campus. Optimized logistics for couriers, receptionists, and employees.",
                 tags: ['NestJS', 'PostgreSQL', 'Logistics AI']
               },
@@ -311,7 +311,7 @@ const App = () => {
             ].map((p, i) => (
               <div key={i} className="bg-[#050505] p-12 lg:p-24 hover:bg-[#080808] transition-all group relative overflow-hidden text-left">
                 <div className="absolute top-0 right-0 w-1 h-0 bg-white/20 group-hover:h-full transition-all duration-700"></div>
-                <div className="text-[9px] font-normal text-gray-600 uppercase tracking-[0.5em] mb-12 group-hover:text-white transition-colors italic">{p.client}</div>
+                <div className="text-[9px] font-normal text-gray-600 uppercase tracking-[0.5em] mb-12 group-hover:text-white transition-colors italic whitespace-nowrap">{p.client}</div>
                 <h4 className="text-4xl font-normal text-white mb-8 tracking-widest uppercase leading-tight text-left">{p.title}</h4>
                 <p className="text-gray-400 text-lg mb-12 font-extralight leading-relaxed italic text-left">{p.desc}</p>
                 <div className="flex flex-wrap gap-10 text-[9px] font-light text-gray-700 uppercase tracking-[0.3em] text-left">
@@ -322,10 +322,10 @@ const App = () => {
           </div>
         </section>
 
-        {/* Minimal Footer */}
+        {/* Footer */}
         <footer className="py-32 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-12 text-white">
           <div className="text-[9px] font-extralight text-gray-700 tracking-[0.6em] uppercase text-center md:text-left leading-loose italic">
-            © 2026 MaxWare Systems <br /> Architectural Design by Maksym Grebeniuk
+            © 2026 MaxWare Protocol <br /> Architectural Design by Maksym Grebeniuk
           </div>
           <div className="flex gap-12 md:gap-16">
             {['Email', 'LinkedIn', 'GitHub'].map(link => (
