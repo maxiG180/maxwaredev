@@ -77,7 +77,7 @@ const App = () => {
                 Full Stack .NET & React Engineer • Eindhoven, NL
               </h2>
               <p className="text-lg text-gray-400 max-w-xl mb-12 leading-relaxed font-light italic text-left">
-                "I architect software that automates real business operations — from manufacturing ERPs to restaurant ecosystems. 9+ production platforms delivered."
+                "I build software that automates real business operations, from manufacturing ERPs to restaurant ecosystems. 9+ production platforms delivered."
               </p>
               <div className="flex items-center gap-10">
                 <a href="#projects" className="border border-white/40 text-white px-10 py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] font-medium hover:bg-white hover:text-black transition-all">
@@ -145,20 +145,38 @@ const App = () => {
 
         {/* Identity Section */}
         <section id="about" className="py-40 border-t border-white/[0.08]">
-          <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal">
-            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic">Identity</h3>
-            <div className="max-w-3xl space-y-10">
-              <p className="text-2xl md:text-4xl text-white font-light leading-tight tracking-tight">
-                Engineering software with a focus on real business impact.
-              </p>
-              <div className="space-y-8 text-lg text-gray-400 font-light leading-relaxed">
-                <p>
-                  Based in the Eindhoven tech hub, studying Software Engineering at <span className="text-white font-normal">Fontys University</span>. I build systems that solve real operational problems — automation engines, ERPs, and dashboards that replace manual work with software people actually want to use.
-                </p>
-                <p>
-                  My character is built on years of high-level competition in professional sports. This background instilled a foundation of <span className="text-white italic">discipline, resilience, and attention to detail</span> that I bring to every system I architect and every line of code I write.
+          <div className="reveal">
+            <h3 className="text-[10px] uppercase tracking-[0.6em] text-white font-semibold italic mb-20">About</h3>
+            <div className="grid lg:grid-cols-2 gap-16 mb-20">
+              <div>
+                <p className="text-3xl md:text-5xl text-white font-light leading-tight tracking-tight">
+                  I build software that solves real problems for real businesses.
                 </p>
               </div>
+              <div className="space-y-8 text-lg text-gray-400 font-light leading-relaxed flex flex-col justify-center">
+                <p>
+                  I'm a software engineer based in Eindhoven, in my second year at <span className="text-white font-normal">Fontys University</span>. I started coding at 15 and have been building things professionally since 2023.
+                </p>
+                <p>
+                  In the last two years I shipped 9 production platforms across very different domains: a workflow engine for a manufacturing ERP at DAMEN-IT, a restaurant operations hub, an agency CRM, a campus delivery system, and more. Most of them built end-to-end.
+                </p>
+                <p>
+                  Before I focused on tech, I spent years competing in professional sports at a high level. That taught me to stay consistent under pressure, to find what is not working and fix it fast, and to care about the details that other people skip. I bring that same approach to every project.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 border-t border-white/[0.08] pt-16 gap-8">
+              {[
+                { num: "9+", label: "Production Platforms" },
+                { num: "3+", label: "Years Building" },
+                { num: "4", label: "Tech Stacks" },
+                { num: "2", label: "Companies Founded" },
+              ].map((stat, i) => (
+                <div key={i} className="text-left">
+                  <div className="text-4xl md:text-5xl font-light text-white mb-2 tracking-tight">{stat.num}</div>
+                  <div className="text-[11px] uppercase tracking-[0.4em] text-gray-500 font-normal">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -172,21 +190,21 @@ const App = () => {
                 {
                   logo: "/resources/fontyslogo.png",
                   name: "Fontys University of Applied Sciences",
-                  degree: "BSc Software Engineering — Delta Excellence Programme",
-                  year: "2024 — 2028",
+                  degree: "BSc Software Engineering, Delta Excellence Programme",
+                  year: "2024 · 2028",
                   primary: true
                 },
                 {
                   logo: "/resources/inetelogo.png",
                   name: "INETE Lisbon",
-                  degree: "IT & Software Development — Professional Track",
-                  year: "2020 — 2023"
+                  degree: "IT & Software Development, Professional Track",
+                  year: "2020 · 2023"
                 },
                 {
                   logo: "/resources/assembly.png",
                   name: "Assembly Academy",
-                  degree: "Advanced Code Intensive — Lisbon, Portugal",
-                  year: "2020 — 2023"
+                  degree: "Advanced Code Intensive, Lisbon, Portugal",
+                  year: "2020 · 2023"
                 }
               ].map((edu, i) => (
                 <div key={i} className={`flex items-center justify-between gap-10 py-10 border-b border-white/[0.08] group hover:bg-white/[0.01] transition-colors px-2 ${i === 0 ? 'pt-0' : ''}`}>
@@ -213,7 +231,7 @@ const App = () => {
             <div className="space-y-24">
               {[
                 {
-                  date: "Feb 2026 — Present",
+                  date: "Feb 2026 · Present",
                   company: "DAMEN-IT",
                   role: ".NET Developer Intern",
                   logo: "/resources/damenit_digitalworkmatelogo.png",
@@ -221,7 +239,7 @@ const App = () => {
                   tech: ['.NET Core', 'SignalR', 'Semantic Kernel', 'Quartz.NET', 'TypeScript', 'Webix']
                 },
                 {
-                  date: "Apr 2025 — Present",
+                  date: "Apr 2025 · Present",
                   company: "Framax Solutions",
                   role: "Co-founder & Full Stack Developer",
                   logo: "/resources/framaxlogo.png",
@@ -229,11 +247,11 @@ const App = () => {
                   tech: ['Next.js 15', 'Supabase', 'TypeScript', 'PostgreSQL RLS', 'Google APIs']
                 },
                 {
-                  date: "Mar 2023 — Jun 2023",
+                  date: "Mar 2023 · Jun 2023",
                   company: "MAIN HUB",
                   role: "Junior Full Stack Developer",
                   logo: "/resources/mainhublogo.jpg",
-                  desc: "Contributed to an enterprise-grade absence management platform, engineered against Microsoft's layered .NET architecture — EF Core, repository and service patterns, dependency injection, and Blazor component conventions. Interactive calendars, multi-step approval flows, and role-based access across HR, managers, and employees.",
+                  desc: "Contributed to an enterprise-grade absence management platform, engineered against Microsoft's layered .NET architecture: EF Core, repository and service patterns, dependency injection, and Blazor component conventions. Interactive calendars, multi-step approval flows, and role-based access across HR, managers, and employees.",
                   tech: ['Blazor', '.NET Core', 'EF Core', 'xUnit', 'C#', 'JavaScript']
                 }
               ].map((exp, i) => (
