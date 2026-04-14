@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
+  const [isCvOpen, setIsCvOpen] = useState(false);
+
   useEffect(() => {
     gsap.utils.toArray(".reveal").forEach((el) => {
       gsap.fromTo(el, 
@@ -39,41 +41,41 @@ const App = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 h-20 flex items-center border-b border-white/[0.03] bg-[#080808]/90 backdrop-blur-xl px-8 md:px-16">
         <div className="container mx-auto flex justify-between items-center">
-          <a href="#" className="text-white font-medium tracking-[0.2em] text-sm uppercase">
+          <a href="#" className="text-white font-normal tracking-[0.3em] text-xs uppercase">
             MaxWare
           </a>
           <div className="flex items-center gap-12">
             <ul className="hidden md:flex items-center gap-10">
               {['About', 'Experience', 'Projects'].map(item => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-[10px] uppercase tracking-[0.2em] font-normal hover:text-white transition-colors">
+                  <a href={`#${item.toLowerCase()}`} className="text-[10px] uppercase tracking-[0.2em] font-light hover:text-white transition-colors">
                     {item}
                   </a>
                 </li>
               ))}
             </ul>
-            <a href="/resources/Maksym_CV_2_0.pdf" target="_blank" className="text-[10px] uppercase tracking-[0.3em] font-medium text-cyan-400">
-              Download Full CV
-            </a>
+            <button onClick={() => setIsCvOpen(true)} className="text-[10px] uppercase tracking-[0.3em] font-normal text-cyan-400 hover:text-white transition-colors">
+              Open CV
+            </button>
           </div>
         </div>
       </nav>
 
       <main className="container mx-auto px-8 md:px-16">
         
-        {/* Elite Split Hero Section */}
+        {/* Elite Hero Section */}
         <section className="min-h-screen flex flex-col justify-center pt-32 pb-20">
-          <div className="grid lg:grid-cols-[1fr_auto] gap-20 items-start w-full reveal">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-24 items-center w-full reveal">
             
             {/* Left: Bio */}
             <div className="max-w-2xl py-10">
-              <h1 className="text-5xl md:text-7xl font-normal tracking-tight text-white mb-8 leading-none">
+              <h1 className="text-5xl md:text-7xl font-light tracking-tighter text-white mb-8 leading-none">
                 Maksym Grebeniuk
               </h1>
-              <h2 className="text-xl md:text-2xl text-gray-400 font-light mb-10 tracking-wide">
+              <h2 className="text-xl md:text-2xl text-gray-400 font-extralight mb-10 tracking-wide">
                 Full Stack .NET & React Engineer • Eindhoven, NL
               </h2>
-              <p className="text-lg text-gray-500 max-w-xl mb-12 leading-relaxed font-light">
+              <p className="text-lg text-gray-500 max-w-xl mb-12 leading-relaxed font-extralight">
                 Architecting high-stakes business operations through scalable .NET 
                 backend systems and high-performance React frontends. 
                 7+ production platforms delivered.
@@ -90,54 +92,90 @@ const App = () => {
               </div>
             </div>
 
-            {/* Right: Embedded Assets (Profile + CV side by side) */}
-            <div className="hidden lg:flex gap-6 h-[550px]">
+            {/* Right: Profile + Interactive CV Card */}
+            <div className="hidden lg:flex flex-col gap-6">
               {/* Profile Image */}
-              <div className="w-[240px] h-full rounded-sm overflow-hidden border border-white/[0.05] grayscale opacity-80 hover:opacity-100 transition-opacity">
+              <div className="w-[320px] h-[320px] rounded-full overflow-hidden border border-white/[0.05] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 shadow-2xl">
                 <img 
                   src="/resources/ProfilePic.jpeg" 
                   alt="Maksym Grebeniuk" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Embedded PDF CV */}
-              <div className="w-[400px] h-full rounded-sm overflow-hidden border border-white/[0.05] bg-[#111]">
-                <iframe 
-                  src="/resources/Maksym_CV_2_0.pdf#toolbar=0&navpanes=0&scrollbar=0" 
-                  className="w-full h-full border-none opacity-90"
-                  title="Maksym Grebeniuk CV"
-                ></iframe>
+              
+              {/* Interactive CV Card */}
+              <div 
+                onClick={() => setIsCvOpen(true)}
+                className="w-[320px] p-6 bg-white/[0.02] border border-white/[0.05] rounded-xl cursor-pointer group hover:bg-white/[0.05] hover:border-cyan-400/30 transition-all"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-[10px] font-normal uppercase tracking-[0.3em] text-gray-500">Document</div>
+                  <i className="fas fa-expand-alt text-gray-600 group-hover:text-cyan-400 transition-colors"></i>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-12 bg-[#111] rounded flex items-center justify-center border border-white/10">
+                    <i className="far fa-file-pdf text-xl text-cyan-400/50"></i>
+                  </div>
+                  <div>
+                    <div className="text-sm font-normal text-white uppercase tracking-wider">Curriculum Vitae</div>
+                    <div className="text-[10px] text-gray-600 font-normal uppercase tracking-widest mt-1">Click to view full screen</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* --- FULL SCREEN CV MODAL --- */}
+        {isCvOpen && (
+          <div className="fixed inset-0 z-[200] bg-[#000]/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10">
+            <button 
+              onClick={() => setIsCvOpen(false)}
+              className="absolute top-8 right-8 text-white hover:text-cyan-400 transition-colors z-[210] flex items-center gap-3 uppercase text-[10px] tracking-[0.4em]"
+            >
+              Close <i className="fas fa-times text-xl"></i>
+            </button>
+            <div className="w-full max-w-5xl h-full bg-[#111] rounded-lg shadow-2xl overflow-hidden relative border border-white/10">
+              <iframe 
+                src="/resources/Maksym_CV_2_0.pdf" 
+                className="w-full h-full border-none"
+                title="Maksym Grebeniuk CV"
+              ></iframe>
+            </div>
+          </div>
+        )}
+
         {/* About Section */}
         <section id="about" className="py-40 border-t border-white/[0.03]">
           <div className="grid lg:grid-cols-[250px_1fr] gap-20 reveal">
-            <h3 className="text-[10px] uppercase tracking-[0.5em] text-cyan-400 font-medium">Background</h3>
-            <div className="max-w-3xl space-y-12">
-              <p className="text-2xl md:text-3xl text-white font-light leading-tight tracking-tight">
+            <h3 className="text-[10px] uppercase tracking-[0.5em] text-cyan-400 font-light">Background</h3>
+            <div className="max-w-3xl space-y-12 text-gray-400">
+              <p className="text-2xl md:text-3xl text-white font-extralight leading-tight tracking-tight">
                 Software Engineering student at Fontys University, relocated from Lisbon to architect high-impact business systems.
               </p>
-              <p className="text-lg leading-relaxed font-light text-gray-500">
+              <p className="text-lg leading-relaxed font-extralight">
                 Member of the elite <span className="text-white">Delta Excellence Programme</span>. Specialized in bridging technical engineering with measurable business value, from custom CRM platforms to automated enterprise ERP modules.
               </p>
               <div className="pt-12 grid md:grid-cols-2 gap-16 border-t border-white/[0.03]">
                 <div>
-                  <div className="text-[9px] uppercase tracking-[0.3em] text-gray-600 font-medium mb-6">Stack</div>
-                  <div className="flex flex-wrap gap-x-8 gap-y-4 text-xs font-normal text-gray-400">
+                  <div className="text-[9px] uppercase tracking-[0.3em] text-gray-600 font-light mb-6">Stack</div>
+                  <div className="flex flex-wrap gap-x-8 gap-y-4 text-xs font-light text-gray-400">
                     {['.NET Core', 'React', 'Next.js 15', 'PostgreSQL', 'AI/ML'].map(t => (
                       <span key={t} className="flex items-center gap-3">
-                        <span className="w-px h-3 bg-cyan-400/40"></span>
+                        <span className="w-px h-3 bg-cyan-400/20"></span>
                         {t}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <div className="text-[9px] uppercase tracking-[0.3em] text-gray-600 font-medium mb-6">Education</div>
-                  <p className="text-xs font-normal text-gray-400 leading-loose uppercase tracking-widest">
+                  <div className="text-[9px] uppercase tracking-[0.3em] text-gray-600 font-light mb-6">Education</div>
+                  <div className="flex items-center gap-6 mb-4">
+                    <img src="/resources/fontyslogo.png" alt="Fontys" className="h-8 object-contain" />
+                    <img src="/resources/inetelogo.png" alt="INETE" className="h-8 object-contain" />
+                    <img src="/resources/assembly.png" alt="Assembly" className="h-8 object-contain" />
+                  </div>
+                  <p className="text-xs font-light text-gray-400 leading-loose uppercase tracking-widest">
                     Fontys ICT Eindhoven <br/> INETE & Assembly Lisbon
                   </p>
                 </div>
@@ -149,13 +187,14 @@ const App = () => {
         {/* Experience Section */}
         <section id="experience" className="py-40 border-t border-white/[0.03]">
           <div className="grid lg:grid-cols-[250px_1fr] gap-20">
-            <h3 className="text-[10px] uppercase tracking-[0.5em] text-cyan-400 font-medium reveal">Timeline</h3>
+            <h3 className="text-[10px] uppercase tracking-[0.5em] text-cyan-400 font-light reveal">Timeline</h3>
             <div className="space-y-32">
               {[
                 {
                   date: "2026 - Present",
                   company: "DAMEN-IT",
                   role: ".NET Developer Intern",
+                  logo: "/resources/damenit_digitalworkmatelogo.png",
                   desc: "Architecting a modular workflow automation engine for an enterprise SaaS ERP. Focused on high-performance factory patterns and multi-provider AI via Semantic Kernel.",
                   tech: ['.NET Core', 'SignalR', 'AI', 'Quartz.NET']
                 },
@@ -170,18 +209,28 @@ const App = () => {
                   date: "2023",
                   company: "MAIN HUB",
                   role: "Junior Developer",
+                  logo: "/resources/mainhublogo.jpg",
                   desc: "Built a production absence management platform with Blazor and .NET Core. Implemented role-based access and achieved 75%+ test coverage.",
                   tech: ['Blazor', '.NET Core', 'xUnit']
                 }
               ].map((exp, i) => (
                 <div key={i} className="reveal group">
-                  <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-8 border-b border-white/[0.03] pb-4">
-                    <h4 className="text-2xl font-normal text-white tracking-widest uppercase">{exp.company}</h4>
-                    <span className="text-[10px] font-normal text-gray-600 uppercase tracking-[0.4em]">{exp.date}</span>
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-white/[0.03] pb-6 gap-6">
+                    <div className="flex items-center gap-6">
+                      {exp.logo && (
+                        <div className="w-16 h-16 bg-white p-2 rounded flex items-center justify-center shrink-0 shadow-xl">
+                          <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                        </div>
+                      )}
+                      <div>
+                        <h4 className="text-2xl font-light text-white tracking-widest uppercase">{exp.company}</h4>
+                        <div className="text-sm text-cyan-400 font-medium uppercase tracking-[0.2em] mt-1">{exp.role}</div>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-light text-gray-600 uppercase tracking-[0.4em] shrink-0">{exp.date}</span>
                   </div>
-                  <div className="text-sm text-cyan-400 font-medium mb-6 uppercase tracking-[0.2em]">{exp.role}</div>
-                  <p className="text-gray-500 text-lg mb-10 max-w-3xl leading-relaxed font-light">{exp.desc}</p>
-                  <div className="flex flex-wrap gap-8 text-[9px] font-normal text-gray-700 uppercase tracking-[0.3em]">
+                  <p className="text-gray-500 text-lg mb-10 max-w-3xl leading-relaxed font-extralight">{exp.desc}</p>
+                  <div className="flex flex-wrap gap-8 text-[9px] font-light text-gray-700 uppercase tracking-[0.3em]">
                     {exp.tech.map(s => <span key={s}>{s}</span>)}
                   </div>
                 </div>
@@ -193,11 +242,11 @@ const App = () => {
         {/* Projects Grid */}
         <section id="projects" className="py-40 border-t border-white/[0.03]">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal">
-            <h3 className="text-[10px] uppercase tracking-[0.5em] text-cyan-400 font-medium">Selected Works</h3>
-            <p className="text-gray-600 text-[9px] font-normal uppercase tracking-[0.4em] mt-4 md:mt-0">Enterprise • Automation • SaaS</p>
+            <h3 className="text-[10px] uppercase tracking-[0.5em] text-cyan-400 font-light">Selected Works</h3>
+            <p className="text-gray-600 text-[9px] font-light uppercase tracking-[0.4em] mt-4 md:mt-0">Enterprise • Automation • SaaS</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-px bg-white/[0.03] border border-white/[0.03] reveal shadow-2xl">
+          <div className="grid md:grid-cols-2 gap-px bg-white/[0.03] border border-white/[0.03] reveal">
             {[
               {
                 title: "Workflow Automation Module",
@@ -225,10 +274,10 @@ const App = () => {
               }
             ].map((p, i) => (
               <div key={i} className="bg-[#080808] p-16 hover:bg-[#0c0c0c] transition-all group relative">
-                <div className="text-[9px] font-normal text-gray-600 uppercase tracking-[0.4em] mb-12 group-hover:text-cyan-400 transition-colors">{p.client}</div>
-                <h4 className="text-3xl font-normal text-white mb-8 tracking-widest uppercase leading-none">{p.title}</h4>
-                <p className="text-gray-500 text-lg mb-12 font-light leading-relaxed">{p.desc}</p>
-                <div className="flex gap-8 text-[9px] font-normal text-gray-700 uppercase tracking-[0.3em]">
+                <div className="text-[9px] font-light text-gray-600 uppercase tracking-[0.4em] mb-12 group-hover:text-cyan-400 transition-colors">{p.client}</div>
+                <h4 className="text-3xl font-light text-white mb-8 tracking-widest uppercase leading-none">{p.title}</h4>
+                <p className="text-gray-500 text-lg mb-12 font-extralight leading-relaxed">{p.desc}</p>
+                <div className="flex gap-8 text-[9px] font-light text-gray-700 uppercase tracking-[0.3em]">
                   {p.tags.map(t => <span key={t}>{t}</span>)}
                 </div>
               </div>
@@ -238,12 +287,12 @@ const App = () => {
 
         {/* Minimal Footer */}
         <footer className="py-24 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-12">
-          <div className="text-[9px] font-normal text-gray-700 tracking-[0.5em] uppercase">
-            © 2026 MaxWare Systems
+          <div className="text-[9px] font-light text-gray-700 tracking-[0.5em] uppercase text-center md:text-left">
+            © 2026 MaxWare Systems <br /> Design by Architecture
           </div>
           <div className="flex gap-16">
             {['Email', 'LinkedIn', 'GitHub'].map(link => (
-              <a key={link} href={link === 'Email' ? 'mailto:maksymgrebeniuk@gmail.com' : link === 'LinkedIn' ? 'https://linkedin.com/in/maksym-grebeniuk-7a8b63174' : 'https://github.com/maxiG180'} target="_blank" className="text-[9px] font-normal text-white uppercase tracking-[0.4em] hover:text-cyan-400 transition-colors">
+              <a key={link} href={link === 'Email' ? 'mailto:maksymgrebeniuk@gmail.com' : link === 'LinkedIn' ? 'https://linkedin.com/in/maksym-grebeniuk-7a8b63174' : 'https://github.com/maxiG180'} target="_blank" className="text-[9px] font-light text-white uppercase tracking-[0.4em] hover:text-cyan-400 transition-colors">
                 {link}
               </a>
             ))}
@@ -252,15 +301,14 @@ const App = () => {
 
       </main>
 
-      {/* Global CSS for lightweight font stack */}
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
         
         body { 
           background-color: #080808; 
           color: #94a3b8; 
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-weight: 300;
+          font-family: 'Inter', -apple-system, sans-serif;
+          font-weight: 200;
         }
         
         ::-webkit-scrollbar { width: 2px; }
@@ -271,12 +319,8 @@ const App = () => {
         
         h1, h2, h3, h4, .logo { 
           font-family: 'Inter', sans-serif;
-          font-weight: 400;
+          font-weight: 300;
           letter-spacing: -0.02em; 
-        }
-        
-        iframe {
-          filter: invert(0.9) hue-rotate(180deg) brightness(1.1); /* Makes PDF look dark mode */
         }
       ` }} />
     </div>
