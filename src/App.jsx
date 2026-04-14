@@ -209,7 +209,7 @@ const App = () => {
                   logo: "/resources/assembly.png",
                   name: "Assembly Academy",
                   degree: "Advanced Code Intensive, Lisbon, Portugal",
-                  year: "2020 · 2023"
+                  year: "2020 · 2021"
                 }
               ].map((edu, i) => (
                 <div key={i} className={`flex items-start sm:items-center justify-between gap-6 py-8 border-b border-white/[0.08] group transition-colors ${i === 0 ? 'pt-0' : ''}`}>
