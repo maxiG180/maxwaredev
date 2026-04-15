@@ -72,7 +72,7 @@ const App = () => {
             <div className="max-w-2xl">
               {/* Mobile: profile pic + CV card side by side */}
               <div className="flex items-stretch gap-4 mb-8 lg:hidden">
-                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-white/[0.1] grayscale shrink-0">
+                <div className="w-28 h-28 sm:w-36 sm:h-36 grayscale shrink-0 mix-blend-lighten">
                   <img src="/resources/ProfilePic.jpeg" alt="Maksym Grebeniuk" className="w-full h-full object-cover object-top" />
                 </div>
                 <div
@@ -112,7 +112,7 @@ const App = () => {
 
             {/* Right Asset Dashboard — desktop only */}
             <div className="hidden lg:flex flex-col gap-10">
-              <div className="w-[350px] h-[350px] rounded-[3rem] overflow-hidden border border-white/[0.1] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 shadow-2xl">
+              <div className="w-[350px] h-[350px] grayscale opacity-90 hover:opacity-100 transition-all duration-1000 mix-blend-lighten">
                 <img
                   src="/resources/ProfilePic.jpeg"
                   alt="Maksym Grebeniuk"
@@ -147,9 +147,9 @@ const App = () => {
           <div className="fixed inset-0 z-[200] bg-[#000]/98 backdrop-blur-3xl flex items-center justify-center p-4 md:p-10 text-left">
             <button 
               onClick={() => setIsCvOpen(false)}
-              className="absolute top-8 right-8 text-white hover:text-gray-400 transition-colors z-[210] flex items-center gap-3 uppercase text-[10px] tracking-[0.5em]"
+              className="absolute top-6 right-6 md:top-8 md:right-8 bg-white md:bg-transparent text-black md:text-white w-10 h-10 md:w-auto md:h-auto rounded-full md:rounded-none flex items-center justify-center gap-3 transition-colors z-[210] uppercase text-[10px] tracking-[0.5em]"
             >
-              Close Viewer <i className="fas fa-times text-lg"></i>
+              <span className="hidden md:inline">Close Viewer</span> <i className="fas fa-times text-xl md:text-lg"></i>
             </button>
             <div className="w-full max-w-5xl h-full bg-white rounded-[2rem] shadow-2xl overflow-hidden relative border border-white/10">
               <iframe 
