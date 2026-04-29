@@ -98,7 +98,7 @@ const PortfolioSection = () => {
           <div className="line-accent" />
           <div className="section-label">Portfolio</div>
           <h3 className="big-statement max-w-2xl" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
-            Architecture · Operations · Full Stack
+            Highlighted Projects
           </h3>
         </div>
 
