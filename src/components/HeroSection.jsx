@@ -167,20 +167,24 @@ const HeroSection = ({ onCvOpen }) => {
                 {/* Easter Egg Particles */}
                 {isHovered && (
                   <div className="absolute inset-0 pointer-events-none overflow-visible">
-                    {[...Array(8)].map((_, i) => (
-                      <span 
-                        key={i} 
-                        className="absolute text-cyan-400 font-mono text-[10px] md:text-xs font-bold opacity-0 animate-float-up"
-                        style={{
-                          left: `${Math.random() * 80 + 10}%`,
-                          bottom: '50%',
-                          animationDelay: `${Math.random() * 0.2}s`,
-                          animationDuration: `${0.6 + Math.random() * 0.4}s`
-                        }}
-                      >
-                        {['{', '}', '</>', '0', '1', ';', '/>', '()'][i % 8]}
-                      </span>
-                    ))}
+                    {[...Array(8)].map((_, i) => {
+                      const baseLeft = 10 + (80 / 7) * i;
+                      const jitter = (Math.random() - 0.5) * 6;
+                      return (
+                        <span 
+                          key={i} 
+                          className="absolute text-cyan-400 font-mono text-[10px] md:text-xs font-bold opacity-0 animate-float-up"
+                          style={{
+                            left: `${baseLeft + jitter}%`,
+                            bottom: '50%',
+                            animationDelay: `${Math.random() * 0.3}s`,
+                            animationDuration: `${0.6 + Math.random() * 0.4}s`
+                          }}
+                        >
+                          {['{', '}', '</>', '0', '1', ';', '/>', '()'][i]}
+                        </span>
+                      );
+                    })}
                   </div>
                 )}
               </a>
