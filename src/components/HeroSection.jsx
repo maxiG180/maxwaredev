@@ -160,15 +160,15 @@ const HeroSection = ({ onCvOpen }) => {
               </a>
               <div className="flex gap-5">
                 <a href="https://linkedin.com/in/maksym-grebeniuk-7a8b63174" target="_blank" rel="noopener noreferrer" className="group relative flex items-center justify-center text-gray-600 hover:text-cyan-400 transition-colors duration-300">
-                  <i className="fab fa-linkedin-in text-lg" />
+                  <i className="fab fa-linkedin-in text-lg group-hover:scale-125 transition-transform duration-300" />
                   <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#111] text-white text-[9px] uppercase tracking-[0.2em] py-1.5 px-3 rounded-md pointer-events-none whitespace-nowrap border border-white/10 shadow-xl">LinkedIn</span>
                 </a>
                 <a href="https://github.com/maxiG180" target="_blank" rel="noopener noreferrer" className="group relative flex items-center justify-center text-gray-600 hover:text-white transition-colors duration-300">
-                  <i className="fab fa-github text-lg" />
+                  <i className="fab fa-github text-lg group-hover:scale-125 transition-transform duration-300" />
                   <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#111] text-white text-[9px] uppercase tracking-[0.2em] py-1.5 px-3 rounded-md pointer-events-none whitespace-nowrap border border-white/10 shadow-xl">GitHub</span>
                 </a>
                 <a href="mailto:maksymgrebeniuk@gmail.com" className="group relative flex items-center justify-center text-gray-600 hover:text-white transition-colors duration-300">
-                  <i className="far fa-envelope text-lg" />
+                  <i className="far fa-envelope text-lg group-hover:scale-125 transition-transform duration-300" />
                   <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#111] text-white text-[9px] uppercase tracking-[0.2em] py-1.5 px-3 rounded-md pointer-events-none whitespace-nowrap border border-white/10 shadow-xl">Email</span>
                 </a>
               </div>

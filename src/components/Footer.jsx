@@ -5,12 +5,12 @@ const Footer = () => {
     <footer className="relative py-12 md:py-16 overflow-hidden">
       {/* Big centered glassy logo */}
       <div className="flex flex-col items-center justify-center mb-10 md:mb-14">
-        <div className="relative rounded-[2rem] overflow-hidden"
+        <div className="relative rounded-[2rem] overflow-hidden group cursor-pointer"
              style={{ boxShadow: '0 0 80px rgba(6, 182, 212, 0.04)' }}>
           <img
             src="/resources/MWLogo.png"
             alt="MaxWare"
-            className="w-32 h-32 md:w-44 md:h-44 object-contain"
+            className="w-32 h-32 md:w-44 md:h-44 object-contain group-hover:scale-110 transition-transform duration-700 ease-out"
           />
         </div>
       </div>
@@ -42,18 +42,19 @@ const Footer = () => {
           {/* Socials */}
           <div className="flex gap-6">
             {[
-              { href: 'mailto:maksymgrebeniuk@gmail.com', icon: 'far fa-envelope' },
-              { href: 'https://linkedin.com/in/maksym-grebeniuk-7a8b63174', icon: 'fab fa-linkedin-in' },
-              { href: 'https://github.com/maxiG180', icon: 'fab fa-github' },
+              { label: 'Email', href: 'mailto:maksymgrebeniuk@gmail.com', icon: 'far fa-envelope' },
+              { label: 'LinkedIn', href: 'https://linkedin.com/in/maksym-grebeniuk-7a8b63174', icon: 'fab fa-linkedin-in' },
+              { label: 'GitHub', href: 'https://github.com/maxiG180', icon: 'fab fa-github' },
             ].map((s, i) => (
               <a
                 key={i}
                 href={s.href}
                 target={s.href.startsWith('mailto') ? undefined : '_blank'}
                 rel={s.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                className="w-10 h-10 rounded-full border border-white/[0.06] flex items-center justify-center text-gray-600 hover:text-white hover:border-white/20 hover:bg-white/[0.03] transition-all duration-300"
+                className="group relative w-10 h-10 rounded-full border border-white/[0.06] flex items-center justify-center text-gray-600 hover:text-white hover:border-white/20 hover:bg-white/[0.03] hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
               >
-                <i className={`${s.icon} text-sm`} />
+                <i className={`${s.icon} text-sm group-hover:scale-110 transition-transform`} />
+                <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#111] text-white text-[9px] uppercase tracking-[0.2em] py-1.5 px-3 rounded-md pointer-events-none whitespace-nowrap border border-white/10 shadow-xl">{s.label}</span>
               </a>
             ))}
           </div>

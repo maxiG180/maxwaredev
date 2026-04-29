@@ -29,8 +29,8 @@ const Navigation = ({ onCvOpen }) => {
 
       <nav className={`nav-fixed ${scrolled ? 'nav-scrolled' : ''}`}>
         <div className="flex items-center justify-between h-20 max-w-[1400px] mx-auto">
-          <a href="#" className="z-10">
-            <img src="/resources/MWLogo.png" alt="MaxWare" className="h-16 w-auto object-contain rounded-lg" />
+          <a href="#" className="z-10 group">
+            <img src="/resources/MWLogo.png" alt="MaxWare" className="h-16 w-auto object-contain rounded-lg group-hover:scale-110 transition-transform duration-500" />
           </a>
 
           {/* Desktop nav */}
