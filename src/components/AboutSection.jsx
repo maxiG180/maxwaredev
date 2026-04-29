@@ -73,15 +73,15 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 mb-16 md:mb-24">
           <div ref={headingRef}>
-            <p className="big-statement">
-              I engineer software that solves complex business problems. My focus is on saving time, reducing costs, and driving revenue.
+            <h3 className="text-3xl md:text-4xl lg:text-[2.5rem] font-medium text-white leading-tight tracking-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              I engineer software that solves complex business problems.
+            </h3>
+            <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+              My focus is on <span className="text-cyan-400">saving time</span>, <span className="text-cyan-400">reducing costs</span>, and <span className="text-cyan-400">driving revenue</span>.
             </p>
           </div>
 
           <div ref={textBlockRef} className="space-y-6 md:space-y-8 text-base md:text-lg text-gray-400 font-light leading-relaxed flex flex-col justify-center">
-            <p>
-              Before focusing on tech, I competed in professional sports at a high level. That taught me to stay consistent under pressure, identify what's not working and fix it fast, and care about details that others skip.
-            </p>
             <p>
               Currently, I'm a software engineer based in Eindhoven, studying at <span className="text-white font-normal">Fontys University</span>, and have been building things professionally since 2023.
             </p>
