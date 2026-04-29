@@ -150,7 +150,7 @@ const HeroSection = ({ onCvOpen }) => {
             </h2>
 
             <p ref={quoteRef} className="text-base md:text-lg text-gray-500 max-w-xl mb-8 md:mb-12 leading-relaxed font-light italic border-l-2 border-white/10 pl-5">
-              "I build software that automates real business operations. +7 production platforms delivered."
+              "I build software that automates core business operations. +7 production platforms delivered."
             </p>
 
             <div ref={ctaRef} className="flex items-center gap-6 md:gap-10">

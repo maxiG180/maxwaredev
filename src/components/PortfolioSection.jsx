@@ -14,12 +14,10 @@ const projects = [
     imagePos: 'left center',
   },
   {
-    title: 'Pérola do Vouga Ecosystem',
-    client: 'Restaurant Operations Hub',
-    desc: 'End-to-end digital platform for a traditional Portuguese restaurant. Customer-facing site with ordering flow, WhatsApp-to-menu parsing engine, and realtime financial dashboard tracking sales, expenses, and margin.',
-    tags: ['Next.js', 'Supabase'],
-    image: '/resources/projects/peroladovouga.png',
-    imagePos: 'center center',
+    title: 'Absence Management Platform',
+    client: 'MAIN HUB',
+    desc: 'Contributed to an enterprise-grade absence management platform, engineered against Microsoft\'s layered .NET architecture: EF Core, repository and service patterns, dependency injection, and Blazor component conventions.',
+    tags: ['Blazor', '.NET Core', 'EF Core', 'C#'],
   },
   {
     title: 'Framax Solutions Platform',
@@ -36,22 +34,6 @@ const projects = [
     tags: ['NestJS', 'Next.js', 'PostgreSQL'],
     image: '/resources/projects/sioux.png',
     imagePos: 'center center',
-  },
-  {
-    title: 'TrimminFlow',
-    client: 'Fontys ICT',
-    desc: 'Barbershop booking platform with realtime calendar sync and server-side conflict detection. Customers book through shop-specific QR codes while owners manage shifts and appointments from a single view.',
-    tags: ['Spring Boot', 'Next.js', 'CI/CD'],
-    image: '/resources/projects/trimminflow.png',
-    imagePos: 'center top',
-  },
-  {
-    title: 'TF Auto Platform',
-    client: 'Framax Solutions',
-    desc: 'Client-facing automotive marketplace and internal admin system. Vehicle listings, service management, and operational tooling with a premium burgundy glassmorphism design and full European Portuguese localization.',
-    tags: ['Next.js', 'Supabase', 'Vercel'],
-    image: '/resources/projects/tfauto.png',
-    imagePos: 'center bottom',
   },
 ];
 

@@ -4,17 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
-  { number: '7+', label: 'Production Platforms' },
-  { number: '3', label: 'Years Building' },
-  { number: '5', label: 'Tech Stacks' },
-];
+
 
 const AboutSection = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const textBlockRef = useRef(null);
-  const statsRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -48,22 +43,7 @@ const AboutSection = () => {
         });
       }
 
-      // ── Stats: scrub-driven scale + fade ──
-      const statEls = statsRef.current?.querySelectorAll('.stat-card');
-      if (statEls) {
-        statEls.forEach((el, i) => {
-          gsap.set(el, { y: 60, opacity: 0, scale: 0.85 });
-          gsap.to(el, {
-            y: 0, opacity: 1, scale: 1, ease: 'none',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 95%',
-              end: 'top 65%',
-              scrub: 1,
-            },
-          });
-        });
-      }
+
 
       // ── Whole section fades out as you scroll past ──
       gsap.to(sectionRef.current, {
@@ -94,33 +74,24 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 mb-16 md:mb-24">
           <div ref={headingRef}>
             <p className="big-statement">
-              I build software that solves real problems for real businesses.
+              I build software that solves problems for businesses.
             </p>
           </div>
 
           <div ref={textBlockRef} className="space-y-6 md:space-y-8 text-base md:text-lg text-gray-400 font-light leading-relaxed flex flex-col justify-center">
             <p>
-              I'm a software engineer based in Eindhoven, in my third year at{' '}
-              <span className="text-white font-normal">Fontys University</span>. I started coding at 15 and have been building things professionally since 2023.
+              Before focusing on tech, I competed in professional sports at a high level. That taught me to stay consistent under pressure, identify what's not working and fix it fast, and care about details that others skip.
             </p>
             <p>
-              In the last two years I shipped 7 production platforms across very different domains: from enterprise workflow engines and CRMs to campus-scale delivery systems and automated booking ecosystems. Most of them built end-to-end.
+              Currently, I'm a software engineer based in Eindhoven, studying at <span className="text-white font-normal">Fontys University</span>, and have been building things professionally since 2023.
             </p>
             <p>
-              Before I focused on tech, I spent years competing in professional sports at a high level. That taught me to stay consistent under pressure, to find what is not working and fix it fast, and to care about the details that other people skip.
+              Recently, I've shipped multiple production platforms end-to-end across different domains—from enterprise workflow engines to campus-scale delivery systems.
             </p>
           </div>
         </div>
 
-        {/* Stats */}
-        <div ref={statsRef} className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
-          {stats.map((s, i) => (
-            <div key={i} className="stat-card glass-card">
-              <div className="stat-number">{s.number}</div>
-              <div className="stat-label">{s.label}</div>
-            </div>
-          ))}
-        </div>
+
       </div>
     </section>
   );

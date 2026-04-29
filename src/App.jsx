@@ -4,7 +4,7 @@ import HeroSection from './components/HeroSection';
 
 const AboutSection = lazy(() => import('./components/AboutSection'));
 const EducationSection = lazy(() => import('./components/EducationSection'));
-const ExperienceSection = lazy(() => import('./components/ExperienceSection'));
+
 const PortfolioSection = lazy(() => import('./components/PortfolioSection'));
 const Footer = lazy(() => import('./components/Footer'));
 
@@ -55,11 +55,7 @@ const App = () => {
             <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
           </div>
 
-          <ExperienceSection />
 
-          <div className="max-w-[1400px] mx-auto px-8 md:px-16">
-            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-          </div>
 
           <PortfolioSection />
         </Suspense>
