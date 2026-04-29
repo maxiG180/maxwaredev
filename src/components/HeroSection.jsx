@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -13,6 +13,7 @@ const HeroSection = ({ onCvOpen }) => {
   const imageDesktopRef = useRef(null);
   const imageMobileRef = useRef(null);
   const cardRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -154,9 +155,34 @@ const HeroSection = ({ onCvOpen }) => {
             </p>
 
             <div ref={ctaRef} className="flex items-center gap-6 md:gap-10">
-              <a href="#projects" className="group relative border border-white/30 text-white px-8 py-3 md:px-10 md:py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] font-medium overflow-hidden transition-all hover:border-white/60">
+              <a 
+                href="#projects" 
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="group relative border border-white/30 text-white px-8 py-3 md:px-10 md:py-4 rounded-xl text-[10px] uppercase tracking-[0.3em] font-medium transition-all hover:border-white/60"
+              >
                 <span className="relative z-10 group-hover:text-black transition-colors duration-300">Portfolio</span>
-                <span className="absolute inset-0 bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out" />
+                <span className="absolute inset-0 bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out rounded-xl" />
+                
+                {/* Easter Egg Particles */}
+                {isHovered && (
+                  <div className="absolute inset-0 pointer-events-none overflow-visible">
+                    {[...Array(8)].map((_, i) => (
+                      <span 
+                        key={i} 
+                        className="absolute text-cyan-400 font-mono text-[10px] md:text-xs font-bold opacity-0 animate-float-up"
+                        style={{
+                          left: `${Math.random() * 80 + 10}%`,
+                          bottom: '50%',
+                          animationDelay: `${Math.random() * 0.2}s`,
+                          animationDuration: `${0.6 + Math.random() * 0.4}s`
+                        }}
+                      >
+                        {['{', '}', '</>', '0', '1', ';', '/>', '()'][i % 8]}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </a>
               <div className="flex gap-5">
                 <a href="https://linkedin.com/in/maksym-grebeniuk-7a8b63174" target="_blank" rel="noopener noreferrer" className="group relative flex items-center justify-center text-gray-600 hover:text-cyan-400 transition-colors duration-300">
