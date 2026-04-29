@@ -137,6 +137,14 @@ const PortfolioSection = () => {
             </div>
           ))}
         </div>
+
+        <div className="mt-16 md:mt-24 flex justify-center items-center gap-4 opacity-70 hover:opacity-100 transition-opacity duration-500">
+          <div className="h-[1px] w-8 md:w-16 bg-gradient-to-r from-transparent to-white/20"></div>
+          <span className="text-[10px] md:text-xs text-gray-400 uppercase tracking-[0.3em] font-medium">
+            ...and many more enterprise solutions
+          </span>
+          <div className="h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-white/20"></div>
+        </div>
       </div>
     </section>
   );

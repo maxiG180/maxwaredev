@@ -159,9 +159,18 @@ const HeroSection = ({ onCvOpen }) => {
                 <span className="absolute inset-0 bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out" />
               </a>
               <div className="flex gap-5">
-                <a href="https://linkedin.com/in/maksym-grebeniuk-7a8b63174" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300"><i className="fab fa-linkedin-in text-lg" /></a>
-                <a href="https://github.com/maxiG180" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-white transition-colors duration-300"><i className="fab fa-github text-lg" /></a>
-                <a href="mailto:maksymgrebeniuk@gmail.com" className="text-gray-600 hover:text-white transition-colors duration-300"><i className="far fa-envelope text-lg" /></a>
+                <a href="https://linkedin.com/in/maksym-grebeniuk-7a8b63174" target="_blank" rel="noopener noreferrer" className="group relative flex items-center justify-center text-gray-600 hover:text-cyan-400 transition-colors duration-300">
+                  <i className="fab fa-linkedin-in text-lg" />
+                  <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#111] text-white text-[9px] uppercase tracking-[0.2em] py-1.5 px-3 rounded-md pointer-events-none whitespace-nowrap border border-white/10 shadow-xl">LinkedIn</span>
+                </a>
+                <a href="https://github.com/maxiG180" target="_blank" rel="noopener noreferrer" className="group relative flex items-center justify-center text-gray-600 hover:text-white transition-colors duration-300">
+                  <i className="fab fa-github text-lg" />
+                  <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#111] text-white text-[9px] uppercase tracking-[0.2em] py-1.5 px-3 rounded-md pointer-events-none whitespace-nowrap border border-white/10 shadow-xl">GitHub</span>
+                </a>
+                <a href="mailto:maksymgrebeniuk@gmail.com" className="group relative flex items-center justify-center text-gray-600 hover:text-white transition-colors duration-300">
+                  <i className="far fa-envelope text-lg" />
+                  <span className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#111] text-white text-[9px] uppercase tracking-[0.2em] py-1.5 px-3 rounded-md pointer-events-none whitespace-nowrap border border-white/10 shadow-xl">Email</span>
+                </a>
               </div>
             </div>
           </div>
