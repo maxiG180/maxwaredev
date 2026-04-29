@@ -74,7 +74,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 mb-16 md:mb-24">
           <div ref={headingRef}>
             <p className="big-statement">
-              I engineer software that solves complex business problems—saving time, reducing costs, and driving revenue.
+              I engineer software that solves complex business problems. My focus is on saving time, reducing costs, and driving revenue.
             </p>
           </div>
 
