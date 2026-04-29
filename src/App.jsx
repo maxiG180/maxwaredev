@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import EducationSection from './components/EducationSection';
-import ExperienceSection from './components/ExperienceSection';
-import PortfolioSection from './components/PortfolioSection';
-import Footer from './components/Footer';
+
+const AboutSection = lazy(() => import('./components/AboutSection'));
+const EducationSection = lazy(() => import('./components/EducationSection'));
+const ExperienceSection = lazy(() => import('./components/ExperienceSection'));
+const PortfolioSection = lazy(() => import('./components/PortfolioSection'));
+const Footer = lazy(() => import('./components/Footer'));
 
 const App = () => {
   const [isCvOpen, setIsCvOpen] = useState(false);
@@ -36,33 +37,37 @@ const App = () => {
       <main className="relative z-[2]">
         <HeroSection onCvOpen={() => setIsCvOpen(true)} />
 
-        {/* Section divider */}
-        <div className="max-w-[1400px] mx-auto px-8 md:px-16">
-          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-        </div>
+        <Suspense fallback={<div className="h-20" />}>
+          {/* Section divider */}
+          <div className="max-w-[1400px] mx-auto px-8 md:px-16">
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+          </div>
 
-        <AboutSection />
+          <AboutSection />
 
-        <div className="max-w-[1400px] mx-auto px-8 md:px-16">
-          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-        </div>
+          <div className="max-w-[1400px] mx-auto px-8 md:px-16">
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+          </div>
 
-        <EducationSection />
+          <EducationSection />
 
-        <div className="max-w-[1400px] mx-auto px-8 md:px-16">
-          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-        </div>
+          <div className="max-w-[1400px] mx-auto px-8 md:px-16">
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+          </div>
 
-        <ExperienceSection />
+          <ExperienceSection />
 
-        <div className="max-w-[1400px] mx-auto px-8 md:px-16">
-          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-        </div>
+          <div className="max-w-[1400px] mx-auto px-8 md:px-16">
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+          </div>
 
-        <PortfolioSection />
+          <PortfolioSection />
+        </Suspense>
       </main>
 
-      <Footer />
+      <Suspense fallback={<div className="h-20" />}>
+        <Footer />
+      </Suspense>
 
       {/* CV Modal */}
       {isCvOpen && (
