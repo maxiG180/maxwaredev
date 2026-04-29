@@ -86,7 +86,7 @@ const AboutSection = () => {
               Currently, I'm a software engineer based in Eindhoven, studying at <span className="text-white font-normal">Fontys University</span>, and have been building things professionally since 2023.
             </p>
             <p>
-              I've engineered and shipped multiple high-performance production platforms end-to-end across a wide variety of business domains.
+              I have engineered and shipped multiple production platforms from start to finish across a wide variety of business domains.
             </p>
           </div>
         </div>
