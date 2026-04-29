@@ -8,21 +8,15 @@ const projects = [
   {
     title: 'Workflow Automation Module',
     client: 'DAMEN-IT / DigitalWorkmate',
-    desc: 'Modular, event-driven automation engine for a multi-tenant manufacturing ERP. Drag-and-drop builder wires SignalR realtime triggers and Quartz.NET schedules into a factory-pattern runtime. AI actions piped through Semantic Kernel across Ollama, OpenAI, and Google providers.',
+    desc: 'A scalable workflow automation module for Digital WorkMate, an enterprise level multi tenant SaaS ERP platform serving manufacturing companies. Users can build and run multiple independent workflow instances through a visual editor, configuring flexible trigger, condition, action flows without writing code. The backend is built on ASP.NET Core following strict layered architecture with factory pattern and attribute based IOC auto registration, ensuring the system is fully extensible without modifying existing code. Event driven realtime triggers, scheduled execution, data configurable triggers, and tenant isolated data access are handled through dedicated infrastructure layers. The frontend leverages dynamic metadata driven form generation, where the UI adapts entirely. AI capabilities are integrated through Microsoft Semantic Kernel supporting multiple providers, with an AI assistant being incorporated into the builder itself to guide users through workflow configuration. Enabling intelligent automation at scale.',
     tags: ['.NET Core', 'SignalR', 'Semantic Kernel'],
     image: '/resources/projects/workflowautomation.png',
     imagePos: 'left center',
   },
   {
-    title: 'Absence Management Platform',
-    client: 'MAIN HUB',
-    desc: 'Contributed to an enterprise-grade absence management platform, engineered against Microsoft\'s layered .NET architecture: EF Core, repository and service patterns, dependency injection, and Blazor component conventions.',
-    tags: ['Blazor', '.NET Core', 'EF Core', 'C#'],
-  },
-  {
     title: 'Framax Solutions Platform',
     client: 'Agency OS',
-    desc: 'Dual-surface product: conversion-tuned agency landing page and secure internal CRM/ERP dashboard. PostgreSQL RLS, automated PDF quotes via jsPDF, Supabase triggers, Google Sheets + Calendar lead pipeline, and bilingual i18n engine.',
+    desc: 'Framax Solutions 2.0 is a dual purpose platform that serves as both a high conversion agency landing page and a full internal CRM/ERP operating system. The challenge was clear: as an agency that builds automation and AI solutions for clients, its own operations needed to run the same way. The platform is a unified ecosystem where the public facing site showcases the services while a secure, integrated dashboard manages the entire agency lifecycle. The backend is built on Next.js 15 (App Router) and Supabase, using PostgreSQL with Row Level Security for role based access to sensitive business data. A custom financial module automates the generation of quotes and invoices using jsPDF and html-pdf-node, and Supabase database triggers keep auth profiles and client records in sync in realtime. For external automation, Google Sheets and Calendar APIs handle lead ingestion and meeting scheduling, alongside a QR code engine with scan analytics for marketing tracking. The frontend is built in TypeScript with Tailwind CSS, featuring a custom i18n engine for seamless switching between English and Portuguese. Framer Motion powers an interactive, high fidelity landing page that reflects the agency\'s focus on modern tech, while the internal side is a data dense, performance optimized dashboard for management.',
     tags: ['Next.js 15', 'Supabase'],
     image: '/resources/projects/framax.png',
     imagePos: 'left center',
@@ -30,10 +24,16 @@ const projects = [
   {
     title: 'SIOUX Package Management',
     client: 'SIOUX Technologies / Fontys',
-    desc: 'Fullstack delivery platform replacing manual package handling across an 8-building campus. Smart-shelf algorithm computes realtime occupancy and optimal storage. Dockerized NestJS backend deployed through GitLab CI.',
+    desc: 'A fullstack package management system for SIOUX Technologies\' 8 building campus in Eindhoven, designed to replace manual delivery handling with an automated end to end workflow. The system covers everything from package registration to storage optimization and pickup notifications, supporting Receptionist, Admin, and Employee roles. The backend runs on NestJS with TypeScript and PostgreSQL via TypeORM, featuring JWT authentication with Passport.js and a smart shelf algorithm that calculates realtime occupancy, volume usage, and weight limits to suggest optimal storage locations across buildings. Barcode and QR code detection is handled through zxing-wasm with image processing via sharp, so staff can register packages by scanning with a live camera, uploading images via drag and drop, or entering details manually. Automated email notifications run through nodemailer, and the whole backend is containerized with Docker and deployed via GitLab CI pipelines. The frontend is built with Next.js 15 and React 19, styled with Tailwind CSS following SIOUX\'s strict brand guidelines (black, white, red). It includes a realtime dashboard showing daily package volume, pending pickups, and shelf availability, plus an advanced filtering system to track packages by status, building, shelf, or date. The UI is optimized for both desktop and tablet since staff walk between shelves with devices in hand. Admins can configure building layouts and manage storage zones directly from the interface.',
     tags: ['NestJS', 'Next.js', 'PostgreSQL'],
     image: '/resources/projects/sioux.png',
     imagePos: 'center center',
+  },
+  {
+    title: 'Absence Management Platform',
+    client: 'MAIN HUB',
+    desc: 'Contributed to an enterprise-grade absence management platform, engineered against Microsoft\'s layered .NET architecture: EF Core, repository and service patterns, dependency injection, and Blazor component conventions.',
+    tags: ['Blazor', '.NET Core', 'EF Core', 'C#'],
   },
 ];
 
@@ -125,7 +125,7 @@ const PortfolioSection = () => {
                 <h4 className="text-xl md:text-2xl font-medium text-white mb-4 uppercase tracking-wide leading-tight">
                   {p.title}
                 </h4>
-                <p className="text-gray-400 text-sm mb-6 font-light leading-relaxed line-clamp-3">
+                <p className="text-gray-400 text-sm mb-6 font-light leading-relaxed">
                   {p.desc}
                 </p>
                 <div className="flex flex-wrap gap-2">
