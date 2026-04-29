@@ -18,7 +18,6 @@ const Navigation = ({ onCvOpen }) => {
   const links = [
     { label: 'About', href: '#about' },
     { label: 'Education', href: '#education' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Portfolio', href: '#projects' },
   ];
 
