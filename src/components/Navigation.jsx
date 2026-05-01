@@ -56,7 +56,7 @@ const Navigation = ({ onCvOpen }) => {
 
         {/* Mobile overlay */}
         {mobileOpen && (
-          <div className="md:hidden fixed top-0 left-0 w-screen h-[100dvh] bg-[#050505]/98 backdrop-blur-2xl z-[110] flex flex-col items-center justify-center gap-8">
+          <div className="md:hidden fixed top-0 left-0 w-screen h-[100dvh] bg-black/95 backdrop-blur-2xl z-[110] flex flex-col items-center justify-center gap-8">
             {links.map(l => (
               <a
                 key={l.label}
