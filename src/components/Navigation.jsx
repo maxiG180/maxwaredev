@@ -47,7 +47,7 @@ const Navigation = ({ onCvOpen }) => {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden z-10 text-white"
+            className="md:hidden relative z-[120] text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             <i className={`fas ${mobileOpen ? 'fa-times' : 'fa-bars'} text-lg`} />
@@ -56,7 +56,7 @@ const Navigation = ({ onCvOpen }) => {
 
         {/* Mobile overlay */}
         {mobileOpen && (
-          <div className="md:hidden fixed inset-0 bg-[#050505]/98 backdrop-blur-2xl z-[110] flex flex-col items-center justify-center gap-8">
+          <div className="md:hidden fixed top-0 left-0 w-screen h-[100dvh] bg-[#050505]/98 backdrop-blur-2xl z-[110] flex flex-col items-center justify-center gap-8">
             {links.map(l => (
               <a
                 key={l.label}
